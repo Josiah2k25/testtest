@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Offer to Purchase Vacant Property - Los Parientes RGV, LLC - Lunar Estates Subdivision Section II">
+    <meta name="keywords" content="property purchase, vacant land, real estate, lunar estates, cameron county">
+    <title>Offer to Purchase Vacant Property - Los Parientes RGV, LLC</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 12px;
+            line-height: 1.2;
+            background: white;
+            padding: 20px;
+            color: black;
+        }
+
+        .document {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.5in;
+            min-height: 11in;
+        }
+
+        .header-text {
+            text-align: center;
+            font-size: 10px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            text-decoration: underline;
+            margin-bottom: 15px;
+        }
+
+        .seller-line {
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+
+        .property-line {
+            margin-bottom: 15px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .buyer-section {
+            display: flex;
+            width: 100%;
+            margin-bottom: 20px;
+            gap: 40px;
+        }
+
+        .buyer-column {
+            flex: 1;
+        }
+
+        .buyer-header {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .field-line {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            min-height: 20px;
+        }
+
+        .field-label {
+            margin-right: 8px;
+            white-space: nowrap;
+        }
+
+        .underlined-field {
+            border: none;
+            border-bottom: 1px solid black;
+            background: transparent;
+            font-family: 'Times New Roman', serif;
+            font-size: 12px;
+            padding: 2px 4px;
+            outline: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .underlined-field:focus {
+            background-color: #f0f8ff;
+            box-shadow: 0 1px 0 0 #2c5aa0;
+        }
+
+        .underlined-field:invalid {
+            border-bottom-color: #dc3545;
+        }
+
+        .name-field {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .email-field {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .address-field {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .phone-field {
+            width: 140px;
+        }
+
+        .ssn-field {
+            width: 140px;
+        }
+
+        .military-field {
+            width: 120px;
+        }
+
+        .status-field {
+            width: 120px;
+        }
+
+        .financial-section {
+            margin: 15px 0;
+        }
+
+        .financial-line {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .financial-field {
+            width: 150px;
+            margin-left: 8px;
+        }
+
+        .term-field {
+            width: 60px;
+            margin: 0 8px;
+        }
+
+        .sample-section {
+            margin: 15px 0;
+        }
+
+        .sample-title {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+
+        .sample-details {
+            margin-bottom: 10px;
+            font-size: 11px;
+        }
+
+        .payment-table {
+            margin: 10px 0;
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 11px;
+        }
+
+        .payment-table td,
+        .payment-table th {
+            border: 1px solid black;
+            padding: 6px;
+            text-align: center;
+        }
+
+        .payment-table th {
+            font-weight: bold;
+            background-color: #f5f5f5;
+        }
+
+        .disclaimer-text {
+            margin: 15px 0;
+            font-size: 11px;
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        .disclaimer-paragraph {
+            margin-bottom: 12px;
+        }
+
+        .signature-lines {
+            margin: 20px 0;
+        }
+
+        .signature-line {
+            margin-bottom: 12px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .signature-underline {
+            display: inline-block;
+            border-bottom: 1px solid black;
+            width: 200px;
+            height: 15px;
+            margin-left: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            position: relative;
+        }
+
+        .signature-underline:hover {
+            background-color: #f0f8ff;
+        }
+
+        .signature-underline.has-signature {
+            background-color: #e8f5e8;
+        }
+
+        .signature-display {
+            position: absolute;
+            top: -5px;
+            left: 2px;
+            width: calc(100% - 4px);
+            height: 25px;
+            pointer-events: none;
+        }
+
+        .typed-signature {
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+            font-size: 18px;
+            color: #2c5aa0;
+            text-align: center;
+            line-height: 25px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #2c5aa0;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #666;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            color: #dc3545;
+        }
+
+        .signature-options {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .option-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-weight: bold;
+        }
+
+        .option-btn.active {
+            border-color: #2c5aa0;
+            background: #f0f8ff;
+            color: #2c5aa0;
+        }
+
+        .option-btn:hover {
+            border-color: #2c5aa0;
+        }
+
+        .signature-input-area {
+            margin: 20px 0;
+        }
+
+        .draw-area {
+            display: none;
+        }
+
+        .draw-area.active {
+            display: block;
+        }
+
+        .type-area {
+            display: none;
+        }
+
+        .type-area.active {
+            display: block;
+        }
+
+        .modal-signature-canvas {
+            width: 100%;
+            height: 150px;
+            border: 2px solid #2c5aa0;
+            background: white;
+            border-radius: 8px;
+            cursor: crosshair;
+        }
+
+        .signature-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+            font-size: 24px;
+            text-align: center;
+            color: #2c5aa0;
+            background: white;
+        }
+
+        .signature-input:focus {
+            outline: none;
+            border-color: #2c5aa0;
+            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+        }
+
+        .signature-preview {
+            margin: 15px 0;
+            padding: 20px;
+            border: 1px dashed #ccc;
+            border-radius: 8px;
+            background: #f9f9f9;
+            text-align: center;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-controls {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .modal-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .btn-cancel {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-cancel:hover {
+            background: #5a6268;
+        }
+
+        .btn-clear {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-clear:hover {
+            background: #c82333;
+        }
+
+        .btn-save {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-save:hover {
+            background: #218838;
+        }
+
+        .btn-save:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .date-section {
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .date-line {
+            display: flex;
+            align-items: center;
+        }
+
+        .date-underline {
+            width: 120px;
+            margin-left: 8px;
+        }
+
+        .office-use {
+            font-style: italic;
+            font-size: 10px;
+            margin-top: 4px;
+        }
+
+        .mortgage-footer {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 11px;
+            border-top: 2px solid black;
+            padding-top: 15px;
+        }
+
+        .submit-section {
+            margin-top: 40px;
+            text-align: center;
+            padding-top: 25px;
+            border-top: 2px solid #2c5aa0;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3d72 100%);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Times New Roman', serif;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(44, 90, 160, 0.3);
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #1e3d72 0%, #2c5aa0 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(44, 90, 160, 0.4);
+        }
+
+        .submit-btn:focus {
+            outline: 3px solid #ffc107;
+            outline-offset: 2px;
+        }
+
+        .submit-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 11px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .success-message {
+            color: #28a745;
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        /* Loading indicator */
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #2c5aa0;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                padding: 0;
+            }
+            .submit-section {
+                display: none;
+            }
+            .signature-lines {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .document {
+                padding: 0.25in;
+            }
+            
+            .buyer-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .property-line {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .field-line {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            
+            .name-field,
+            .email-field,
+            .address-field {
+                min-width: 200px;
+            }
+            
+            .date-section {
+                margin-left: 0;
+                margin-top: 10px;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .financial-line {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            
+            .field-line {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .underlined-field {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header-text">
+            Your actual rate, payment and costs could be higher. Get an official Loan Estimate before choosing a loan.
+        </div>
+
+        <h1 class="title">
+            OFFER TO PURCHASE VACANT PROPERTY
+        </h1>
+
+        <form id="property-form" novalidate>
+            <div class="seller-line">
+                <strong>Seller:</strong> Los Parientes RGV, LLC, P.O. Box 610, McAllen, Texas 78505
+            </div>
+
+            <div class="property-line">
+                <span>Lot#</span>
+                <input type="text" name="lot" class="underlined-field" style="width: 80px;" required aria-label="Lot number">
+                <span>Block#</span>
+                <input type="text" name="block" class="underlined-field" style="width: 80px;" required aria-label="Block number">
+                <span>Subdivision: Lunar Estates Subdivision Section II, Cameron County, TX</span>
+            </div>
+
+            <div class="buyer-section">
+                <div class="buyer-column">
+                    <div class="buyer-header">Buyer</div>
+                    
+                    <div class="field-line">
+                        <input type="text" name="buyer_name" class="underlined-field name-field" required 
+                               aria-label="Buyer full name" placeholder="Full Name">
+                        <div class="error-message" id="buyer-name-error">Please enter buyer's full name</div>
+                    </div>
+                    
+                    <div class="field-line">
+                        <span class="field-label">Email:</span>
+                        <input type="email" name="buyer_email" class="underlined-field email-field" required 
+                               aria-label="Buyer email address" placeholder="email@example.com">
+                        <div class="error-message" id="buyer-email-error">Please enter a valid email address</div>
+                    </div>
+                    
+                    <div class="field-line">
+                        <span class="field-label">City, State Zip</span>
+                        <input type="text" name="buyer_address" class="underlined-field address-field" required 
+                               aria-label="Buyer city, state, and zip code" placeholder="City, State 12345">
+                        <div class="error-message" id="buyer-address-error">Please enter city, state, and zip code</div>
+                    </div>
+                    
+                    <div class="field-line">
+                        <span class="field-label">Phone</span>
+                        <input type="tel" name="buyer_phone" class="underlined-field phone-field" required 
+                               aria-label="Buyer phone number" placeholder="(555) 123-4567">
+                        <span class="field-label" style="margin-left: 15px;">SSN</span>
+                        <input type="text" name="buyer_ssn" class="underlined-field ssn-field" required 
+                               aria-label="Buyer social security number" placeholder="XXX-XX-XXXX" maxlength="11">
+                        <div class="error-message" id="buyer-contact-error">Please enter phone and SSN</div>
+                    </div>
+                    
+                    <div class="field-line">
+                        <span class="field-label">Active Military:</span>
+                        <input type="text" name="active_military" class="underlined-field military-field" 
+                               aria-label="Buyer military status" placeholder="Yes/No">
+                        <span class="field-label" style="margin-left: 15px;">Status</span>
+                        <input type="text" name="military_status" class="underlined-field status-field" 
+                               aria-label="Buyer military service status">
+                    </div>
+                </div>
+
+                <div class="buyer-column">
+                    <div class="buyer-header">Co-Buyer</div>
+                    
+                    <div class="field-line">
+                        <input type="text" name="co_buyer_name" class="underlined-field name-field" 
+                               aria-label="Co-buyer full name" placeholder="Full Name (Optional)">
+                    </div>
+                    
+                    <div class="field-line">
+                        <span class="field-label">Email:</span>
+                        <input type="email" name="co_buyer_email" class="underlined-field email-field" 
+                               aria-label="Co-buyer email address" placeholder="email@example.com">
+                    </div>
+                    
+                    <div class="field-line">
+                        <span class="field-label">City, State Zip</span>
+                        <input type="text" name="co_buyer_address" class="underlined-field address-field" 
+                               aria-label="Co-buyer city, state, and zip code" placeholder="City, State 12345">
+                    </div>
+                    
+                    <div class="field-line">
+                        <span class="field-label">Phone</span>
+                        <input type="tel" name="co_buyer_phone" class="underlined-field phone-field" 
+                               aria-label="Co-buyer phone number" placeholder="(555) 123-4567">
+                        <span class="field-label" style="margin-left: 15px;">SSN</span>
+                        <input type="text" name="co_buyer_ssn" class="underlined-field ssn-field" 
+                               aria-label="Co-buyer social security number" placeholder="XXX-XX-XXXX" maxlength="11">
+                    </div>
+                    
+                    <div class="field-line">
+                        <span class="field-label">Active Military:</span>
+                        <input type="text" name="co_active_military" class="underlined-field military-field" 
+                               aria-label="Co-buyer military status" placeholder="Yes/No">
+                        <span class="field-label" style="margin-left: 15px;">Status</span>
+                        <input type="text" name="co_military_status" class="underlined-field status-field" 
+                               aria-label="Co-buyer military service status">
+                    </div>
+                </div>
+            </div>
+
+            <section class="financial-section" aria-labelledby="financial-heading">
+                <h2 id="financial-heading" class="sr-only">Financial Information</h2>
+                
+                <div class="financial-line">
+                    <span>Sales Price: $</span>
+                    <input type="number" name="sales_price" class="underlined-field financial-field" step="0.01" min="0" required 
+                           aria-label="Property sales price" placeholder="0.00">
+                    <div class="error-message" id="sales-price-error">Please enter the sales price</div>
+                </div>
+                
+                <div class="financial-line">
+                    <span>Deposit: $</span>
+                    <input type="number" name="deposit" class="underlined-field financial-field" step="0.01" min="0" 
+                           aria-label="Deposit amount" placeholder="0.00">
+                </div>
+                
+                <div class="financial-line">
+                    <span>Down Payment: $</span>
+                    <input type="number" name="down_payment" class="underlined-field financial-field" step="0.01" min="0" required 
+                           aria-label="Down payment amount" placeholder="0.00">
+                    <div class="error-message" id="down-payment-error">Please enter the down payment amount</div>
+                </div>
+                
+                <div class="financial-line">
+                    <span>Interest Rate: 10%, per annum (10% APR)</span>
+                </div>
+                
+                <div class="financial-line">
+                    <span>Term:</span>
+                    <input type="number" name="term" class="underlined-field term-field" min="1" max="30" required 
+                           aria-label="Loan term in years" placeholder="15">
+                    <span>years</span>
+                    <div class="error-message" id="term-error">Please enter loan term (1-30 years)</div>
+                </div>
+                
+                <div class="financial-line">
+                    <span>Escrow for Taxes: Yes</span>
+                </div>
+            </section>
+
+            <section class="sample-section" aria-labelledby="sample-heading">
+                <h2 id="sample-heading" class="sample-title">Sample Financing Schedule</h2>
+                <div class="sample-details">
+                    Sales Price: $75,000.00<br>
+                    Down Payment: $3,000.00<br>
+                    Interest Rate: 10%, per annum (10% APR)<br>
+                    Seller Financed Amount: $72,000.00
+                </div>
+
+                <table class="payment-table" role="table" aria-label="Payment schedule for different loan terms">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" scope="col">Status</th>
+                            <th colspan="2" scope="colgroup">Estimated Term/Monthly<br>P&I Payment</th>
+                            <th rowspan="2" scope="col">Status</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">5 Years</th>
+                            <th scope="col">10 Years</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Active Military</strong></td>
+                            <td>$1,529.79</td>
+                            <td>$951.49</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" scope="row">Status</th>
+                            <th scope="col">15 Years</th>
+                            <th scope="col">20 Years</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>$773.72</td>
+                            <td>$694.82</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="disclaimer-text" aria-labelledby="disclaimer-heading">
+                <h2 id="disclaimer-heading" class="sr-only">Legal Disclaimers and Terms</h2>
+                
+                <div class="disclaimer-paragraph">
+                    <strong>An Owner's Title Insurance Policy is not provided in this sale.</strong> Buyer may obtain a Title Insurance Policy at Buyer's expense from a title company of Buyer's choice.
+                </div>
+
+                <div class="disclaimer-paragraph">
+                    Buyer is offering to purchase the property described herein <strong>"AS IS"</strong> in its present condition. The Property is subject to certain restrictions which Buyer acknowledges having received a copy of.
+                </div>
+
+                <div class="disclaimer-paragraph">
+                    The documents signed at the closing of the sale and purchase will contain the entire agreement. Any promise or representation by any salesperson or employee of the Seller in writing or orally that is different than the documents signed at the closing is void. Any dispute between Seller and Buyer related to this agreement which is not resolved through informal discussion will be referred to a mutually acceptable mediation service or provider. The parties to the mediation shall bear the mediation cost equally.
+                </div>
+
+                <div class="disclaimer-paragraph">
+                    <strong>Notice Regarding Possible Annexation:</strong> If the property that is the subject of this Contract is located outside the limits of a municipality, the property may now or later be included in the extraterritorial jurisdiction of a municipality and may now or later be subject to annexation by the municipality. Each municipality maintains a map that depicts its boundaries and extraterritorial jurisdiction. To determine if the property is located within a municipality's extraterritorial jurisdiction or is likely to be located within a municipality's extraterritorial jurisdiction, contact all municipalities located in the general proximity of the property for further information.
+                </div>
+            </section>
+
+            <div class="signature-lines">
+                <div class="signature-line">
+                    <span>Buyer:</span>
+                    <div class="signature-underline" onclick="openSignatureModal('buyer')" 
+                         id="buyer-signature-display" title="Click to sign">
+                        <div class="signature-display" id="buyer-signature-preview"></div>
+                    </div>
+                    <div class="date-section">
+                        <div class="date-line">
+                            <span>Date Accepted by Seller</span>
+                            <span class="signature-underline date-underline"></span>
+                        </div>
+                        <div class="office-use">(Office use only)</div>
+                    </div>
+                </div>
+                <div class="signature-line">
+                    <span>Name:</span>
+                </div>
+                <div class="signature-line" style="margin-top: 15px;">
+                    <span>Co-Buyer:</span>
+                    <div class="signature-underline" onclick="openSignatureModal('coBuyer')" 
+                         id="co-buyer-signature-display" title="Click to sign">
+                        <div class="signature-display" id="co-buyer-signature-preview"></div>
+                    </div>
+                </div>
+                <div class="signature-line">
+                    <span>Name:</span>
+                </div>
+            </div>
+
+            <div class="mortgage-footer">
+                <strong>Residential Mortgage Loan by:</strong> South Texas Origination and Mortgage, LLC<br>
+                1308 E. Jasmine Avenue, McAllen, Texas 78501<br>
+                956.330.3859 NMLS# 1974725
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Submitting your application...</p>
+            </div>
+
+            <div class="submit-section">
+                <button type="submit" class="submit-btn" id="submit-btn" 
+                        aria-describedby="submit-description">Submit Application</button>
+                <div id="submit-description" class="sr-only">
+                    Submit your offer to purchase vacant property. All required fields must be completed and buyer signature is required.
+                </div>
+            </div>
+        </form>
+
+        <!-- Signature Modal -->
+        <div id="signature-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title" class="modal-title">Add Signature</h3>
+                    <button type="button" class="close-btn" onclick="closeSignatureModal()" aria-label="Close modal">&times;</button>
+                </div>
+
+                <div class="signature-options">
+                    <button type="button" class="option-btn active" id="draw-option" onclick="switchSignatureMode('draw')">
+                        ✏️ Draw Signature
+                    </button>
+                    <button type="button" class="option-btn" id="type-option" onclick="switchSignatureMode('type')">
+                        ⌨️ Type Signature
+                    </button>
+                </div>
+
+                <div class="signature-input-area">
+                    <div class="draw-area active" id="draw-area">
+                        <canvas id="modal-signature-canvas" class="modal-signature-canvas" width="500" height="150"></canvas>
+                        <p style="text-align: center; margin-top: 10px; color: #666; font-size: 12px;">
+                            Draw your signature above using mouse or touch
+                        </p>
+                    </div>
+
+                    <div class="type-area" id="type-area">
+                        <input type="text" id="typed-signature-input" class="signature-input" 
+                               placeholder="Type your full name here..." maxlength="50">
+                        <p style="text-align: center; margin-top: 10px; color: #666; font-size: 12px;">
+                            Your typed signature will appear in cursive font
+                        </p>
+                    </div>
+                </div>
+
+                <div class="signature-preview" id="signature-preview">
+                    <span style="color: #999;">Signature preview will appear here</span>
+                </div>
+
+                <div class="modal-controls">
+                    <button type="button" class="modal-btn btn-cancel" onclick="closeSignatureModal()">Cancel</button>
+                    <button type="button" class="modal-btn btn-clear" onclick="clearCurrentSignature()">Clear</button>
+                    <button type="button" class="modal-btn btn-save" id="save-signature-btn" onclick="saveSignature()" disabled>
+                        Save Signature
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        // Initialize EmailJS with your credentials
+        emailjs.init("pke2f-TlIhUIfcXmU");
+        
+        // Signature modal functionality
+        let currentSigner = null;
+        let currentSignatureMode = 'draw';
+        let modalCanvas = null;
+        let modalCtx = null;
+        let isModalDrawing = false;
+        let hasCurrentSignature = false;
+        
+        // Signature storage
+        let signatures = {
+            buyer: { type: null, data: null },
+            coBuyer: { type: null, data: null }
+        };
+        
+        // Initialize modal canvas
+        function initModalCanvas() {
+            modalCanvas = document.getElementById('modal-signature-canvas');
+            modalCtx = modalCanvas.getContext('2d');
+            
+            const rect = modalCanvas.getBoundingClientRect();
+            modalCanvas.width = rect.width;
+            modalCanvas.height = rect.height;
+            
+            modalCtx.lineCap = 'round';
+            modalCtx.lineJoin = 'round';
+            modalCtx.strokeStyle = '#2c5aa0';
+            modalCtx.lineWidth = 2;
+            
+            // Bind drawing events
+            modalCanvas.addEventListener('mousedown', startModalDrawing);
+            modalCanvas.addEventListener('mousemove', drawModal);
+            modalCanvas.addEventListener('mouseup', stopModalDrawing);
+            modalCanvas.addEventListener('mouseout', stopModalDrawing);
+            modalCanvas.addEventListener('touchstart', handleModalTouch);
+            modalCanvas.addEventListener('touchmove', handleModalTouch);
+            modalCanvas.addEventListener('touchend', stopModalDrawing);
+        }
+        
+        function openSignatureModal(signer) {
+            currentSigner = signer;
+            const modal = document.getElementById('signature-modal');
+            const title = document.getElementById('modal-title');
+            
+            title.textContent = signer === 'buyer' ? 'Buyer Signature' : 'Co-Buyer Signature';
+            modal.style.display = 'block';
+            modal.setAttribute('aria-hidden', 'false');
+            
+            // Initialize canvas if not already done
+            if (!modalCanvas) {
+                initModalCanvas();
+            }
+            
+            // Load existing signature if any
+            loadExistingSignature();
+            
+            // Focus management
+            document.getElementById('draw-option').focus();
+        }
+        
+        function closeSignatureModal() {
+            const modal = document.getElementById('signature-modal');
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+            clearCurrentSignature();
+            currentSigner = null;
+        }
+        
+        function switchSignatureMode(mode) {
+            currentSignatureMode = mode;
+            
+            // Update option buttons
+            document.getElementById('draw-option').classList.toggle('active', mode === 'draw');
+            document.getElementById('type-option').classList.toggle('active', mode === 'type');
+            
+            // Update areas
+            document.getElementById('draw-area').classList.toggle('active', mode === 'draw');
+            document.getElementById('type-area').classList.toggle('active', mode === 'type');
+            
+            clearCurrentSignature();
+            updatePreview();
+        }
+        
+        function startModalDrawing(e) {
+            if (currentSignatureMode !== 'draw') return;
+            isModalDrawing = true;
+            hasCurrentSignature = true;
+            updateSaveButton();
+            
+            const coords = getModalCoordinates(e);
+            modalCtx.beginPath();
+            modalCtx.moveTo(coords.x, coords.y);
+            updatePreview();
+        }
+        
+        function drawModal(e) {
+            if (!isModalDrawing || currentSignatureMode !== 'draw') return;
+            
+            const coords = getModalCoordinates(e);
+            modalCtx.lineTo(coords.x, coords.y);
+            modalCtx.stroke();
+            modalCtx.beginPath();
+            modalCtx.moveTo(coords.x, coords.y);
+        }
+        
+        function stopModalDrawing() {
+            isModalDrawing = false;
+            modalCtx.beginPath();
+        }
+        
+        function handleModalTouch(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const mouseEvent = new MouseEvent(e.type === 'touchstart' ? 'mousedown' : 'mousemove', {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            modalCanvas.dispatchEvent(mouseEvent);
+        }
+        
+        function getModalCoordinates(e) {
+            const rect = modalCanvas.getBoundingClientRect();
+            return {
+                x: (e.clientX || e.touches[0].clientX) - rect.left,
+                y: (e.clientY || e.touches[0].clientY) - rect.top
+            };
+        }
+        
+        function clearCurrentSignature() {
+            if (modalCanvas) {
+                modalCtx.clearRect(0, 0, modalCanvas.width, modalCanvas.height);
+            }
+            document.getElementById('typed-signature-input').value = '';
+            hasCurrentSignature = false;
+            updateSaveButton();
+            updatePreview();
+        }
+        
+        function updatePreview() {
+            const preview = document.getElementById('signature-preview');
+            
+            if (currentSignatureMode === 'draw' && hasCurrentSignature) {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = modalCanvas.width;
+                canvas.height = modalCanvas.height;
+                ctx.drawImage(modalCanvas, 0, 0);
+                
+                preview.innerHTML = '';
+                canvas.style.width = '100%';
+                canvas.style.height = '60px';
+                canvas.style.objectFit = 'contain';
+                preview.appendChild(canvas);
+            } else if (currentSignatureMode === 'type') {
+                const text = document.getElementById('typed-signature-input').value;
+                if (text.trim()) {
+                    preview.innerHTML = `<span class="typed-signature" style="font-size: 24px;">${text}</span>`;
+                    hasCurrentSignature = true;
+                } else {
+                    preview.innerHTML = '<span style="color: #999;">Signature preview will appear here</span>';
+                    hasCurrentSignature = false;
+                }
+                updateSaveButton();
+            } else {
+                preview.innerHTML = '<span style="color: #999;">Signature preview will appear here</span>';
+            }
+        }
+        
+        function updateSaveButton() {
+            const saveBtn = document.getElementById('save-signature-btn');
+            saveBtn.disabled = !hasCurrentSignature;
+        }
+        
+        function saveSignature() {
+            if (!hasCurrentSignature || !currentSigner) return;
+            
+            let signatureData = null;
+            
+            if (currentSignatureMode === 'draw') {
+                signatureData = modalCanvas.toDataURL();
+            } else if (currentSignatureMode === 'type') {
+                signatureData = document.getElementById('typed-signature-input').value.trim();
+            }
+            
+            // Save signature
+            signatures[currentSigner] = {
+                type: currentSignatureMode,
+                data: signatureData
+            };
+            
+            // Update display
+            updateSignatureDisplay(currentSigner);
+            
+            closeSignatureModal();
+        }
+        
+        function updateSignatureDisplay(signer) {
+            const displayElement = document.getElementById(`${signer === 'buyer' ? 'buyer' : 'co-buyer'}-signature-display`);
+            const previewElement = document.getElementById(`${signer === 'buyer' ? 'buyer' : 'co-buyer'}-signature-preview`);
+            
+            const signature = signatures[signer];
+            
+            if (signature.data) {
+                displayElement.classList.add('has-signature');
+                
+                if (signature.type === 'draw') {
+                    const img = document.createElement('img');
+                    img.src = signature.data;
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                    img.style.objectFit = 'contain';
+                    previewElement.innerHTML = '';
+                    previewElement.appendChild(img);
+                } else if (signature.type === 'type') {
+                    previewElement.innerHTML = `<span class="typed-signature">${signature.data}</span>`;
+                }
+            } else {
+                displayElement.classList.remove('has-signature');
+                previewElement.innerHTML = '';
+            }
+        }
+        
+        function loadExistingSignature() {
+            const signature = signatures[currentSigner];
+            clearCurrentSignature();
+            
+            if (signature.data) {
+                if (signature.type === 'draw') {
+                    switchSignatureMode('draw');
+                    const img = new Image();
+                    img.onload = function() {
+                        modalCtx.drawImage(img, 0, 0);
+                        hasCurrentSignature = true;
+                        updateSaveButton();
+                        updatePreview();
+                    };
+                    img.src = signature.data;
+                } else if (signature.type === 'type') {
+                    switchSignatureMode('type');
+                    document.getElementById('typed-signature-input').value = signature.data;
+                    hasCurrentSignature = true;
+                    updateSaveButton();
+                    updatePreview();
+                }
+            }
+        }
+        
+        // Form validation
+        function validateForm(form) {
+            const errors = [];
+            
+            // Required fields validation
+            const requiredFields = [
+                { name: 'lot', message: 'Lot number is required' },
+                { name: 'block', message: 'Block number is required' },
+                { name: 'buyer_name', message: 'Buyer name is required' },
+                { name: 'buyer_email', message: 'Buyer email is required' },
+                { name: 'buyer_address', message: 'Buyer address is required' },
+                { name: 'buyer_phone', message: 'Buyer phone is required' },
+                { name: 'buyer_ssn', message: 'Buyer SSN is required' },
+                { name: 'sales_price', message: 'Sales price is required' },
+                { name: 'down_payment', message: 'Down payment is required' },
+                { name: 'term', message: 'Loan term is required' }
+            ];
+            
+            requiredFields.forEach(field => {
+                const input = form[field.name];
+                if (!input.value.trim()) {
+                    errors.push(field.message);
+                    input.style.borderColor = '#dc3545';
+                } else {
+                    input.style.borderColor = '';
+                }
+            });
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (form.buyer_email.value && !emailRegex.test(form.buyer_email.value)) {
+                errors.push('Please enter a valid buyer email address');
+            }
+            
+            if (form.co_buyer_email.value && !emailRegex.test(form.co_buyer_email.value)) {
+                errors.push('Please enter a valid co-buyer email address');
+            }
+            
+            // Signature validation
+            if (!signatures.buyer.data) {
+                errors.push('Buyer signature is required');
+            }
+            
+            // Co-buyer validation
+            const coBuyerName = form.co_buyer_name.value.trim();
+            if (coBuyerName && !signatures.coBuyer.data) {
+                if (!confirm('Co-Buyer name is provided but no signature. Continue without Co-Buyer signature?')) {
+                    errors.push('Co-Buyer signature is required when Co-Buyer name is provided');
+                }
+            }
+            
+            return errors;
+        }
+        
+        // Input formatting helpers
+        function formatSSN(input) {
+            let value = input.value.replace(/\D/g, '');
+            if (value.length >= 6) {
+                value = value.substring(0,3) + '-' + value.substring(3,5) + '-' + value.substring(5,9);
+            } else if (value.length >= 4) {
+                value = value.substring(0,3) + '-' + value.substring(3);
+            }
+            input.value = value;
+        }
+        
+        function formatPhone(input) {
+            let value = input.value.replace(/\D/g, '');
+            if (value.length >= 7) {
+                value = '(' + value.substring(0,3) + ') ' + value.substring(3,6) + '-' + value.substring(6,10);
+            } else if (value.length >= 4) {
+                value = '(' + value.substring(0,3) + ') ' + value.substring(3);
+            } else if (value.length >= 1) {
+                value = '(' + value;
+            }
+            input.value = value;
+        }
+        
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Typed signature input listener
+            const typedInput = document.getElementById('typed-signature-input');
+            if (typedInput) {
+                typedInput.addEventListener('input', updatePreview);
+            }
+            
+            // Close modal when clicking outside
+            const modal = document.getElementById('signature-modal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeSignatureModal();
+                    }
+                });
+            }
+            
+            // Make signature areas focusable for accessibility
+            const signatureAreas = document.querySelectorAll('.signature-underline');
+            signatureAreas.forEach(area => {
+                area.setAttribute('tabindex', '0');
+                area.setAttribute('role', 'button');
+                area.setAttribute('aria-label', 'Click to add signature');
+            });
+            
+            // Add formatting to SSN and phone inputs
+            const ssnInputs = document.querySelectorAll('input[name$="_ssn"]');
+            const phoneInputs = document.querySelectorAll('input[type="tel"]');
+            
+            ssnInputs.forEach(input => {
+                input.addEventListener('input', () => formatSSN(input));
+            });
+            
+            phoneInputs.forEach(input => {
+                input.addEventListener('input', () => formatPhone(input));
+            });
+        });
+        
+        // Keyboard accessibility
+        document.addEventListener('keydown', function(e) {
+            if (e.target.classList.contains('signature-underline')) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    e.target.click();
+                }
+            }
+            
+            // ESC key to close modal
+            if (e.key === 'Escape' && document.getElementById('signature-modal').style.display === 'block') {
+                closeSignatureModal();
+            }
+        });
+// Modified form submission with PDF generation
+document.getElementById('property-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const errors = validateForm(this);
+    if (errors.length > 0) {
+        alert('Please correct the following errors:\n\n' + errors.join('\n'));
+        return;
+    }
+    
+    const loading = document.getElementById('loading');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    loading.style.display = 'block';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    
+    try {
+        // Generate PDF
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        // Add title
+        doc.setFontSize(18);
+        doc.text('Property Purchase Application', 105, 20, { align: 'center' });
+        
+        // Add submission date
+        doc.setFontSize(12);
+        doc.text(`Submitted: ${new Date().toLocaleDateString()}`, 14, 30);
+        
+        // Add property information
+        doc.setFontSize(14);
+        doc.text('Property Information', 14, 40);
+        doc.setFontSize(12);
+        doc.text(`Lot: ${this.lot.value}`, 14, 48);
+        doc.text(`Block: ${this.block.value}`, 14, 56);
+        doc.text('Subdivision: Lunar Estates Subdivision Section II, Cameron County, TX', 14, 64);
+        
+        // Add buyer information
+        doc.setFontSize(14);
+        doc.text('Buyer Information', 14, 80);
+        doc.setFontSize(12);
+        doc.text(`Name: ${this.buyer_name.value}`, 14, 88);
+        doc.text(`Email: ${this.buyer_email.value}`, 14, 96);
+        doc.text(`Address: ${this.buyer_address.value}`, 14, 104);
+        doc.text(`Phone: ${this.buyer_phone.value}`, 14, 112);
+        doc.text(`SSN: ${this.buyer_ssn.value}`, 14, 120);
+        doc.text(`Military Status: ${this.active_military.value || 'N/A'}`, 14, 128);
+        
+        // Add co-buyer if exists
+        if (this.co_buyer_name.value.trim()) {
+            doc.setFontSize(14);
+            doc.text('Co-Buyer Information', 14, 144);
+            doc.setFontSize(12);
+            doc.text(`Name: ${this.co_buyer_name.value}`, 14, 152);
+            doc.text(`Email: ${this.co_buyer_email.value || 'N/A'}`, 14, 160);
+            doc.text(`SSN: ${this.co_buyer_ssn.value || 'N/A'}`, 14, 168);
+        }
+        
+        // Add financial information
+        doc.setFontSize(14);
+        doc.text('Financial Information', 14, 184);
+        doc.setFontSize(12);
+        doc.text(`Sales Price: $${this.sales_price.value}`, 14, 192);
+        doc.text(`Down Payment: $${this.down_payment.value}`, 14, 200);
+        doc.text(`Loan Term: ${this.term.value} years`, 14, 208);
+        doc.text('Interest Rate: 10% APR', 14, 216);
+        
+        // Add signatures section
+        doc.setFontSize(14);
+        doc.text('Signatures', 14, 232);
+        doc.setFontSize(12);
+        doc.text('Buyer Signature:', 14, 240);
+        
+        // Add buyer signature if exists
+        if (signatures.buyer.data) {
+            if (signatures.buyer.type === 'draw') {
+                const buyerSigImg = new Image();
+                buyerSigImg.src = signatures.buyer.data;
+                await new Promise(resolve => {
+                    buyerSigImg.onload = () => {
+                        doc.addImage(buyerSigImg, 'PNG', 40, 240, 60, 20);
+                        resolve();
+                    };
+                });
+            } else {
+                doc.text(signatures.buyer.data, 40, 250);
+            }
+        }
+        
+        // Add co-buyer signature if exists
+        if (signatures.coBuyer.data) {
+            doc.text('Co-Buyer Signature:', 14, 260);
+            if (signatures.coBuyer.type === 'draw') {
+                const coBuyerSigImg = new Image();
+                coBuyerSigImg.src = signatures.coBuyer.data;
+                await new Promise(resolve => {
+                    coBuyerSigImg.onload = () => {
+                        doc.addImage(coBuyerSigImg, 'PNG', 50, 260, 60, 20);
+                        resolve();
+                    };
+                });
+            } else {
+                doc.text(signatures.coBuyer.data, 50, 270);
+            }
+        }
+        
+        // Generate PDF as base64 string
+        const pdfBase64 = doc.output('datauristring').split(',')[1];
+        
+        // Prepare template parameters
+        const templateParams = {
+            to_email: 'josiahgonza@gmail.com',
+            to_name: 'Los Parientes RGV LLC',
+            from_name: this.buyer_name.value,
+            from_email: this.buyer_email.value,
+            form_data: `
+                PROPERTY INFORMATION:
+                Lot: ${this.lot.value}
+                Block: ${this.block.value}
+                Subdivision: Lunar Estates Subdivision Section II, Cameron County, TX
+                
+                BUYER INFORMATION:
+                Name: ${this.buyer_name.value}
+                Email: ${this.buyer_email.value}
+                Address: ${this.buyer_address.value}
+                Phone: ${this.buyer_phone.value}
+                SSN: ${this.buyer_ssn.value}
+                Military Status: ${this.active_military.value || 'N/A'}
+                
+                FINANCIAL INFORMATION:
+                Sales Price: $${this.sales_price.value}
+                Down Payment: $${this.down_payment.value}
+                Loan Term: ${this.term.value} years
+                Interest Rate: 10% APR
+            `,
+            signature_status: signatures.buyer.data ? 'Signed' : 'Not signed',
+            application_date: new Date().toLocaleDateString(),
+            pdf_base64: pdfBase64 // Include the PDF as base64
+        };
+
+        // Send email using EmailJS
+        const response = await emailjs.send(
+            'service_ptm6a26', 
+            'template_qxavgh2', 
+            templateParams
+        );
+        
+        console.log('Email sent successfully:', response);
+        alert('Application submitted successfully!');
+        
+        // Reset form
+        this.reset();
+        signatures = { buyer: { type: null, data: null }, coBuyer: { type: null, data: null } };
+        updateSignatureDisplay('buyer');
+        updateSignatureDisplay('coBuyer');
+    } catch (error) {
+        console.error('Submission failed:', error);
+        alert('Failed to submit application: ' + (error.message || 'Please try again later'));
+    } finally {
+        loading.style.display = 'none';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Application';
+    }
+});
+        console.log('Property form script loaded successfully');
+    </script>

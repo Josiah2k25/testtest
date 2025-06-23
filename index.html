@@ -1457,7 +1457,7 @@
       statusMsg.className = `status-msg ${type} show`;
     }
 
-    // PDF generation with optimized settings
+    // PDF generation with optimized settings for better text quality
     async function generatePDF() {
       try {
         const controlPanel = document.querySelector('.control-panel');
@@ -1472,20 +1472,32 @@
           await new Promise(resolve => setTimeout(resolve, 1000));
         }
         
-        // OPTIMIZED: Reduced scale and quality for smaller file size
+        // FIXED: Better settings for text quality
+        const element = document.getElementById('documentPage');
+        
+        // Get the actual dimensions
+        const rect = element.getBoundingClientRect();
+        const actualWidth = rect.width;
+        const actualHeight = rect.height;
+        
         const options = {
-          scale: 1.5, // Reduced from 2
+          scale: 2, // Higher scale for better text quality
           useCORS: true,
           allowTaint: true,
           backgroundColor: '#ffffff',
           logging: false,
           letterRendering: true,
-          windowWidth: 816,
-          windowHeight: 1056,
-          quality: 0.8 // Added quality setting
+          width: actualWidth, // Use actual dimensions
+          height: actualHeight,
+          onclone: function(clonedDoc) {
+            // Ensure fonts are loaded in the cloned document
+            const clonedElement = clonedDoc.getElementById('documentPage');
+            if (clonedElement) {
+              clonedElement.style.fontFamily = '"Times New Roman", Times, serif';
+            }
+          }
         };
         
-        const element = document.getElementById('documentPage');
         const canvas = await html2canvas(element, options);
         
         controlPanel.style.display = 'block';
@@ -1493,16 +1505,39 @@
         formFooter.style.display = 'block';
         
         const { jsPDF } = window.jspdf;
+        
+        // Calculate proper dimensions to maintain aspect ratio
+        const imgWidth = canvas.width;
+        const imgHeight = canvas.height;
+        const ratio = imgHeight / imgWidth;
+        
+        // Standard letter size: 8.5" x 11"
+        const pdfWidth = 8.5;
+        const pdfHeight = 11;
+        
+        // Calculate scaled dimensions to fit within page while maintaining ratio
+        let scaledWidth = pdfWidth;
+        let scaledHeight = pdfWidth * ratio;
+        
+        if (scaledHeight > pdfHeight) {
+          scaledHeight = pdfHeight;
+          scaledWidth = pdfHeight / ratio;
+        }
+        
+        // Center the content on the page
+        const offsetX = (pdfWidth - scaledWidth) / 2;
+        const offsetY = (pdfHeight - scaledHeight) / 2;
+        
         const pdf = new jsPDF({
           orientation: 'portrait',
           unit: 'in',
           format: 'letter',
-          compress: true // Added compression
+          compress: true
         });
         
-        // OPTIMIZED: Compress image before adding to PDF
-        const imgData = canvas.toDataURL('image/jpeg', 0.8); // Use JPEG with 80% quality
-        pdf.addImage(imgData, 'JPEG', 0, 0, 8.5, 11);
+        // FIXED: Use PNG for better text quality and proper scaling
+        const imgData = canvas.toDataURL('image/png');
+        pdf.addImage(imgData, 'PNG', offsetX, offsetY, scaledWidth, scaledHeight);
         
         return pdf;
         

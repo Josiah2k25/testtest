@@ -1,1884 +1,1766 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Individual Application Form for Rio Tierra Real Estate developments. Apply to purchase premium residential lots in our exclusive communities.">
-    <meta name="keywords" content="individual application, Rio Tierra, residential lots, real estate, Florida Estates, Lunar Estates, property offer">
-    <meta name="author" content="Rio Tierra Real Estate">
-    <meta property="og:title" content="Rio Tierra | Individual Application Form">
-    <meta property="og:description" content="Apply to purchase premium residential lots in Rio Tierra Real Estate's exclusive developments.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="/Rio Tierra Logo.webp">
-    <title>Rio Tierra | Individual Application Form</title>
-    
-    <link rel="preload" href="/Rio Tierra Logo.webp" as="image">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
-        
-        :root {
-            --primary: #c1743c;
-            --primary-dark: #a85e2d;
-            --primary-light: #d4896b;
-            --secondary: #2d4a8a;
-            --secondary-light: #4a68af;
-            --text-dark: #222222;
-            --text-medium: #555555;
-            --text-light: #888888;
-            --border-color: #e0e0e0;
-            --border-light: #f5f5f5;
-            --bg-light: #fdfaf7;
-            --bg-white: #ffffff;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --border-radius: 8px;
-            --border-radius-lg: 12px;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Montserrat', sans-serif;
-            --font-signature: 'Dancing Script', cursive;
-        }
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-white);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* Updated Navbar Styles to match the image */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: #f5f1ed;
-            padding: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-
-        .navbar-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar-brand {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            transition: var(--transition);
-        }
-
-        .navbar-brand:hover {
-            transform: translateY(-2px);
-        }
-
-        .navbar-logo {
-            height: 60px;
-            width: auto;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-        }
-
-        .navbar-links {
-            display: flex;
-            list-style: none;
-            gap: 50px;
-            margin: 0;
-            padding: 0;
-            align-items: center;
-        }
-
-        .navbar-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 16px;
-            transition: var(--transition);
-            position: relative;
-            padding: 10px 0;
-            letter-spacing: 0.02em;
-        }
-
-        .navbar-links a:hover {
-            color: var(--primary);
-        }
-
-        .navbar-links a.active {
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .navbar-right {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .navbar-cta {
-            background: var(--primary);
-            color: #ffffff;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(193, 116, 60, 0.3);
-            letter-spacing: 0.02em;
-        }
-
-        .navbar-cta:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(193, 116, 60, 0.4);
-        }
-
-        .navbar-cta:active {
-            transform: translateY(0);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-
-        .mobile-menu-btn:hover {
-            background: rgba(0, 0, 0, 0.05);
-        }
-
-        .mobile-menu-btn span {
-            width: 24px;
-            height: 2px;
-            background: var(--text-dark);
-            margin: 3px 0;
-            transition: var(--transition);
-            border-radius: 1px;
-        }
-
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .mobile-menu-btn.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-
-        .form-section {
-            padding: 120px 0 100px;
-            min-height: calc(100vh - 200px);
-            background-color: var(--bg-light);
-        }
-
-        .form-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--bg-white);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-lg);
-            padding: 40px 50px;
-            border: 1px solid var(--border-color);
-        }
-
-        .form-header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .form-header h1 {
-            font-family: var(--font-heading);
-            font-size: 2.8rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-        }
-
-        .form-header p {
-            font-size: 1.05rem;
-            color: var(--text-medium);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .document-content {
-            font-family: var(--font-body);
-            font-size: 14px;
-            line-height: 1.5;
-            color: var(--text-dark);
-            padding: 0 10px;
-        }
-
-        .header-text {
-            text-align: center;
-            font-size: 12px;
-            margin-bottom: 25px;
-            font-style: italic;
-            color: var(--text-light);
-        }
-
-        .title {
-            text-align: center;
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 20px;
-            color: var(--secondary);
-            text-decoration: underline;
-            margin-bottom: 30px;
-        }
-
-        .section-heading {
-            font-family: var(--font-heading);
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-top: 30px;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .seller-line, .property-line {
-            margin-bottom: 15px;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .buyer-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-
-        .buyer-column {
-            background-color: var(--bg-light);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-light);
-        }
-
-        .buyer-header {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px dashed var(--border-color);
-        }
-
-        .field-line {
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            position: relative;
-        }
-
-        .field-label {
-            margin-right: 10px;
-            white-space: nowrap;
-            font-weight: 500;
-            color: var(--text-medium);
-            min-width: 80px;
-        }
-
-        .underlined-field {
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            background-color: var(--bg-white);
-            font-family: var(--font-body);
-            font-size: 14px;
-            padding: 10px 12px;
-            outline: none;
-            transition: all 0.2s ease;
-            flex-grow: 1;
-            min-width: 150px;
-            color: var(--text-dark);
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
-        }
-
-        .underlined-field:focus {
-            border-color: var(--secondary-light);
-            box-shadow: 0 0 0 3px rgba(45, 74, 138, 0.1), inset 0 1px 2px rgba(0,0,0,0.06);
-            background-color: #f8faff;
-        }
-
-        .underlined-field:invalid:not(:placeholder-shown) {
-            border-color: #e74c3c;
-            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
-        }
-
-        .underlined-field.error {
-            border-color: #e74c3c !important;
-            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1) !important;
-        }
-
-        .name-field, .email-field, .address-field {
-            min-width: 250px;
-        }
-
-        .phone-field, .ssn-field, .military-field, .status-field {
-            width: 180px;
-            flex-grow: 0;
-        }
-
-        .financial-section {
-            margin: 30px 0;
-        }
-
-        .financial-line {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            position: relative;
-        }
-
-        .financial-field {
-            width: 160px;
-        }
-
-        .term-field {
-            width: 70px;
-            text-align: center;
-        }
-
-        .sample-section {
-            background-color: var(--bg-light);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-light);
-            margin: 30px 0;
-        }
-
-        .sample-title {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 16px;
-            color: var(--primary-dark);
-            margin-bottom: 10px;
-            text-decoration: underline;
-        }
-
-        .sample-details {
-            font-size: 13px;
-            margin-bottom: 15px;
-            color: var(--text-medium);
-        }
-
-        .payment-table {
-            margin: 15px 0;
-            border-collapse: collapse;
-            width: 100%;
-            font-size: 13px;
-        }
-
-        .payment-table td,
-        .payment-table th {
-            border: 1px solid var(--border-color);
-            padding: 10px;
-            text-align: center;
-        }
-
-        .payment-table th {
-            font-weight: 600;
-            background-color: var(--border-light);
-            color: var(--text-dark);
-        }
-
-        .payment-table td {
-            background-color: var(--bg-white);
-        }
-
-        .disclaimer-text {
-            margin: 30px 0;
-            font-size: 13px;
-            line-height: 1.6;
-            text-align: justify;
-            color: var(--text-medium);
-            padding: 15px;
-            border: 1px dashed var(--border-color);
-            border-radius: var(--border-radius);
-            background-color: #fffaf5;
-        }
-
-        .disclaimer-paragraph {
-            margin-bottom: 10px;
-        }
-
-        .signature-lines {
-            margin: 30px 0;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .signature-line {
-            margin-bottom: 25px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .signature-label {
-            font-weight: 600;
-            color: var(--text-dark);
-            min-width: 120px;
-        }
-
-        .signature-underline {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px dashed var(--border-color);
-            border-radius: 4px;
-            width: 250px;
-            height: 45px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background-color: var(--bg-white);
-            position: relative;
-            overflow: hidden;
-            flex-shrink: 0;
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
-            z-index: 1;
-        }
-
-        .signature-underline:hover {
-            background-color: #f8faff;
-            border-color: var(--secondary-light);
-            box-shadow: 0 0 0 3px rgba(45, 74, 138, 0.1);
-        }
-
-        .signature-underline:focus {
-            outline: none;
-            border-color: var(--secondary-light);
-            box-shadow: 0 0 0 3px rgba(45, 74, 138, 0.2);
-        }
-
-        .signature-underline.has-signature {
-            border-color: #28a745;
-            background-color: #e6ffe6;
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.06), 0 0 0 3px rgba(40, 167, 69, 0.15);
-        }
-
-        .signature-underline.has-error {
-            border-color: #e74c3c !important;
-            background-color: #fff0f0;
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.06), 0 0 0 3px rgba(231, 76, 60, 0.15) !important;
-        }
-
-        .signature-display {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 5px;
-        }
-
-        .typed-signature {
-            font-family: var(--font-signature);
-            font-size: 28px;
-            color: var(--secondary);
-            text-align: center;
-            line-height: 1;
-            white-space: nowrap;
-            transform: translateY(2px);
-            user-select: none;
-        }
-
-        .drawn-signature {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .date-section {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-left: auto;
-        }
-
-        .date-underline {
-            width: 120px;
-            text-align: center;
-        }
-
-        .mortgage-footer {
-            margin-top: 30px;
-            text-align: center;
-            font-size: 13px;
-            border-top: 1px solid var(--border-light);
-            padding-top: 20px;
-            color: var(--text-light);
-        }
-
-        .submit-section {
-            margin-top: 40px;
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
-            color: white;
-            border: none;
-            padding: 15px 35px;
-            font-size: 17px;
-            font-weight: 600;
-            cursor: pointer;
-            font-family: var(--font-body);
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            box-shadow: var(--shadow-md);
-            letter-spacing: 0.02em;
-        }
-
-        .submit-btn:hover {
-            background: linear-gradient(135deg, var(--secondary-light) 0%, #1e3d72 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 18px rgba(45, 74, 138, 0.4);
-        }
-
-        .submit-btn:focus {
-            outline: 3px solid rgba(45, 74, 138, 0.3);
-            outline-offset: 3px;
-        }
-
-        .submit-btn:disabled {
-            background: #cccccc;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-            opacity: 0.7;
-        }
-
-        .error-message {
-            color: #e74c3c;
-            font-size: 12px;
-            margin-top: 5px;
-            margin-left: 5px;
-            display: none;
-            flex-basis: 100%;
-            text-align: left;
-            padding-left: 10px;
-        }
-
-        .field-line .error-message {
-            position: absolute;
-            bottom: -18px;
-            left: calc(80px + 10px);
-        }
-
-        .field-line:has(input.name-field) .error-message {
-            left: 0;
-        }
-
-        .status-message {
-            font-size: 14px;
-            margin-top: 15px;
-            font-weight: 500;
-            min-height: 20px;
-        }
-
-        .status-message.success {
-            color: #28a745;
-        }
-
-        .status-message.error {
-            color: #e74c3c;
-        }
-
-        .status-message.loading {
-            color: var(--secondary);
-        }
-
-        .loading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
-            color: var(--secondary);
-            font-weight: 500;
-        }
-
-        .spinner {
-            border: 3px solid var(--border-light);
-            border-top: 3px solid var(--secondary);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            animation: spin 0.8s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease-out forwards;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background-color: var(--bg-white);
-            padding: 30px;
-            border-radius: var(--border-radius-lg);
-            width: 90%;
-            max-width: 650px;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            animation: slideInTop 0.3s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideInTop {
-            from { transform: translateY(-30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .modal-title {
-            font-family: var(--font-heading);
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        .close-btn {
-            background: none;
-            border: none;
-            font-size: 32px;
-            cursor: pointer;
-            color: var(--text-light);
-            padding: 0;
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .close-btn:hover {
-            color: #e74c3c;
-            transform: scale(1.1);
-        }
-
-        .signature-options {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .option-btn {
-            flex: 1;
-            padding: 12px;
-            border: 2px solid var(--border-color);
-            background: var(--bg-white);
-            cursor: pointer;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            font-weight: 600;
-            font-size: 15px;
-            color: var(--text-medium);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .option-btn.active {
-            border-color: var(--secondary);
-            background: #f0f8ff;
-            color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(45, 74, 138, 0.1);
-        }
-
-        .option-btn:hover:not(.active) {
-            border-color: var(--secondary-light);
-            background: var(--border-light);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .signature-input-area {
-            margin-bottom: 25px;
-        }
-
-        .draw-area {
-            display: none;
-        }
-
-        .draw-area.active {
-            display: block;
-        }
-
-        .type-area {
-            display: none;
-        }
-
-        .type-area.active {
-            display: block;
-        }
-
-        .modal-signature-canvas {
-            width: 100%;
-            height: 180px;
-            border: 2px solid var(--border-color);
-            background: var(--bg-white);
-            border-radius: var(--border-radius);
-            cursor: crosshair;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
-        }
-
-        .modal-signature-canvas:hover {
-            border-color: var(--secondary-light);
-            box-shadow: 0 0 0 3px rgba(45, 74, 138, 0.1);
-        }
-
-        .signature-input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid var(--border-color);
-            border-radius: var(--border-radius);
-            font-family: var(--font-signature);
-            font-size: 32px;
-            text-align: center;
-            color: var(--secondary);
-            background: var(--bg-white);
-            transition: var(--transition);
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
-        }
-
-        .signature-input:focus {
-            outline: none;
-            border-color: var(--secondary-light);
-            box-shadow: 0 0 0 3px rgba(45, 74, 138, 0.1), inset 0 1px 2px rgba(0,0,0,0.06);
-        }
-
-        .signature-preview {
-            margin-top: 20px;
-            padding: 20px;
-            border: 1px dashed var(--border-color);
-            border-radius: var(--border-radius);
-            background: var(--bg-light);
-            text-align: center;
-            min-height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        .signature-preview .drawn-signature {
-            max-height: 70px;
-            width: auto;
-        }
-
-        .modal-controls {
-            display: flex;
-            gap: 15px;
-            justify-content: flex-end;
-            margin-top: 30px;
-        }
-
-        .modal-btn {
-            padding: 12px 25px;
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 15px;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .btn-cancel {
-            background: #6c757d;
-            color: white;
-        }
-
-        .btn-cancel:hover {
-            background: #5a6268;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-clear {
-            background: #e74c3c;
-            color: white;
-        }
-
-        .btn-clear:hover {
-            background: #c0392b;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-save {
-            background: #28a745;
-            color: white;
-        }
-
-        .btn-save:hover {
-            background: #218838;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-save:disabled {
-            background: #cccccc;
-            cursor: not-allowed;
-            opacity: 0.7;
-            transform: none;
-            box-shadow: none;
-        }
-
-        /* For PDF generation */
-        #pdf-content {
-            display: none;
-            padding: 40px;
-            background: white;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-
-        #pdf-content h1 {
-            color: #2d4a8a;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        #pdf-content .section {
-            margin-bottom: 25px;
-        }
-
-        #pdf-content .field-group {
-            margin-bottom: 15px;
-        }
-
-        #pdf-content .field-label {
-            font-weight: bold;
-            display: inline-block;
-            width: 150px;
-        }
-
-        #pdf-content .signature-section {
-            margin-top: 40px;
-            border-top: 1px solid #ccc;
-            padding-top: 20px;
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .navbar-container {
-                padding: 15px 30px;
-            }
-            
-            .navbar-links {
-                position: fixed;
-                top: 90px;
-                left: 0;
-                right: 0;
-                background: #f5f1ed;
-                flex-direction: column;
-                padding: 30px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition);
-                gap: 25px;
-            }
-            
-            .navbar-links.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            .navbar-links a.active::after {
-                bottom: -8px;
-            }
-            
-            .mobile-menu-btn {
-                display: flex;
-            }
-            
-            .navbar-cta {
-                display: none;
-            }
-
-            .form-section {
-                padding: 100px 0 70px;
-            }
-            
-            .form-container {
-                padding: 30px 20px;
-                margin: 0 15px;
-            }
-            
-            .form-header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .form-header p {
-                font-size: 0.95rem;
-            }
-            
-            .document-content {
-                padding: 0;
-            }
-            
-            .buyer-section {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .property-line, .financial-line, .signature-line {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-            
-            .field-line {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-            }
-            
-            .underlined-field {
-                width: 100%;
-                min-width: unset;
-            }
-            
-            .field-label {
-                min-width: unset;
-                margin-bottom: 5px;
-            }
-            
-            .phone-field, .ssn-field, .military-field, .status-field, .financial-field, .term-field {
-                width: 100%;
-                margin-left: 0;
-            }
-            
-            .signature-underline {
-                width: 100%;
-                margin-left: 0;
-            }
-            
-            .date-section {
-                margin-left: 0;
-                width: 100%;
-                justify-content: flex-start;
-            }
-            
-            .modal-content {
-                margin: 10% auto;
-                padding: 20px;
-            }
-            
-            .modal-title {
-                font-size: 20px;
-            }
-            
-            .signature-input {
-                font-size: 24px;
-            }
-            
-            .typed-signature {
-                font-size: 24px;
-            }
-            
-            .modal-signature-canvas {
-                height: 150px;
-            }
-
-            .field-line .error-message {
-                position: static;
-                margin-top: 2px;
-                margin-left: 0;
-                padding-left: 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .navbar-container {
-                padding: 12px 20px;
-            }
-            
-            .navbar-logo {
-                height: 45px;
-            }
-            
-            .navbar-links {
-                top: 75px;
-            }
-
-            .form-container {
-                padding: 25px 15px;
-                margin: 0 10px;
-            }
-            
-            .form-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .form-header p {
-                font-size: 0.9rem;
-            }
-            
-            .submit-btn {
-                font-size: 15px;
-                padding: 12px 25px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-            
-            html {
-                scroll-behavior: auto;
-            }
-        }
-        .signature-underline {
-            position: relative;
-        }
-        
-        .signature-display canvas {
-            width: 100%;
-            height: 100%;
-        }
-        
-        /* Enhanced error styling */
-        .error-message {
-            color: #e74c3c;
-            font-size: 12px;
-            margin-top: 5px;
-            display: block;
-            opacity: 0;
-            height: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .error-message.show {
-            opacity: 1;
-            height: auto;
-        }
-        
-        .signature-underline.has-error {
-            border-color: #e74c3c;
-            background-color: #fff0f0;
-        }
-        
-        /* Loading spinner animation */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Modal positioning fix */
-        .modal {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Mobile signature field adjustments */
-        @media (max-width: 768px) {
-            .signature-line {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .signature-underline {
-                width: 100%;
-                margin-left: 0;
-            }
-            
-            .date-section {
-                margin-left: 0;
-                margin-top: 15px;
-                width: 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Individual Application Form for Rio Tierra Real Estate developments. Apply to purchase premium residential lots in our exclusive communities.">
+  <meta name="keywords" content="individual application, Rio Tierra, residential lots, real estate, Florida Estates, Lunar Estates">
+  <meta name="author" content="Rio Tierra Real Estate">
+  <meta property="og:title" content="Rio Tierra | Individual Application Form">
+  <meta property="og:description" content="Apply to purchase premium residential lots in Rio Tierra Real Estate's exclusive developments.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/Rio Tierra Logo.webp">
+  <title>Rio Tierra | Individual Application Form</title>
+  
+  <link rel="preload" href="/Rio Tierra Logo.webp" as="image">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/footer.css">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  
+  <style>
+    :root {
+      --primary: #c1743c;
+      --primary-dark: #a85e2d;
+      --primary-light: #d4896b;
+      --secondary: #2d4a8a;
+      --text-dark: #1a1a1a;
+      --text-medium: #4a4a4a;
+      --text-light: #6b7280;
+      --border-color: #e5e7eb;
+      --border-light: #f3f4f6;
+      --bg-light: #fafafa;
+      --bg-white: #ffffff;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.12);
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --border-radius: 8px;
+      --border-radius-lg: 12px;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: var(--bg-white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(245, 241, 235, 0.95);
+      border-bottom: 1px solid var(--border-color);
+      padding: 0;
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: var(--transition);
+    }
+
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+    }
+
+    .navbar-brand {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .navbar-brand:hover {
+      transform: translateY(-1px);
+    }
+
+    .navbar-logo {
+      height: 45px;
+      width: auto;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+
+    .navbar-links {
+      display: flex;
+      list-style: none;
+      gap: 48px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    .navbar-links a {
+      text-decoration: none;
+      color: var(--text-medium);
+      font-weight: 500;
+      font-size: 15px;
+      transition: var(--transition);
+      position: relative;
+      padding: 12px 0;
+      letter-spacing: 0.01em;
+    }
+
+    .navbar-links a:hover {
+      color: var(--text-dark);
+    }
+
+    .navbar-links a.active {
+      color: var(--text-dark);
+      font-weight: 600;
+      position: relative;
+    }
+
+    .navbar-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 1px;
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .navbar-cta {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
+      padding: 12px 28px;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      letter-spacing: 0.01em;
+    }
+
+    .navbar-cta:hover {
+      background: linear-gradient(135deg, var(--primary-dark), #955129);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      color: #ffffff;
+    }
+
+    .navbar-cta:active {
+      transform: translateY(0);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .mobile-menu-btn:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .mobile-menu-btn span {
+      width: 24px;
+      height: 2px;
+      background: #1a1a1a;
+      margin: 3px 0;
+      transition: all 0.25s ease;
+      border-radius: 1px;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .form-section {
+      padding: 120px 0 100px;
+      min-height: calc(100vh - 200px);
+      background: linear-gradient(135deg, var(--bg-light) 0%, #f8f9fa 100%);
+    }
+
+    .form-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: var(--bg-white);
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 50px;
+      width: 100%;
+      border: 1px solid var(--border-light);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid var(--border-light);
+    }
+
+    .form-header h1 {
+      font-size: 2.75rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    /* Document Form Styles */
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    .page-container {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+      padding: 0.75in;
+      margin: 0 auto;
+      font-family: 'Times New Roman', Times, serif;
+      color: #000;
+      line-height: 1.3;
+      font-size: 12pt;
+    }
+
+    .header-section {
+      text-align: center;
+      margin-bottom: 0.35in;
+      position: relative;
+    }
+
+    .form-number {
+      position: absolute;
+      top: -0.5in;
+      right: 0;
+      font-size: 9pt;
+      color: #666;
+      font-family: Arial, sans-serif;
+    }
+
+    .main-title {
+      font-size: 16pt;
+      font-weight: bold;
+      text-decoration: underline;
+      letter-spacing: 0.5pt;
+      margin-bottom: 0.25in;
+    }
+
+    .info-line {
+      margin-bottom: 0.15in;
+      display: flex;
+      align-items: baseline;
+      line-height: 1.8;
+    }
+
+    .label {
+      font-weight: bold;
+      margin-right: 0.1in;
+    }
+
+    .field-input {
+      border: none;
+      border-bottom: 1px solid #000;
+      background: transparent;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 12pt;
+      padding: 0 2px;
+      margin: 0 0.05in;
+      outline: none;
+      display: inline-block;
+      vertical-align: baseline;
+    }
+
+    .field-input:focus {
+      background: rgba(255, 255, 240, 0.5);
+    }
+
+    .field-xs { width: 0.5in; }
+    .field-s { width: 0.9in; }
+    .field-m { width: 1.5in; }
+    .field-l { width: 2.2in; }
+    .field-xl { width: 3in; }
+    .field-auto { min-width: 0.8in; flex: 1; }
+
+    .buyer-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1.5pt solid #000;
+      margin: 0.25in 0;
+      table-layout: fixed;
+    }
+
+    .buyer-table td {
+      padding: 0.08in 0.1in;
+      vertical-align: top;
+      width: 50%;
+    }
+
+    .buyer-table .section-header {
+      font-weight: bold;
+      text-align: center;
+      text-decoration: underline;
+      padding: 0.12in 0;
+      font-size: 13pt;
+    }
+
+    .buyer-table .divider {
+      border-right: 1pt solid #000;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 0.12in;
+      flex-wrap: wrap;
+    }
+
+    .info-label {
+      font-weight: bold;
+      margin-right: 0.08in;
+      min-width: 0.55in;
+      flex-shrink: 0;
+    }
+
+    .financial-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1.5pt solid #000;
+      margin: 0.2in 0;
+    }
+
+    .financial-table td {
+      border: 1pt solid #000;
+      padding: 0.08in 0.12in;
+    }
+
+    .financial-table .label-cell {
+      font-weight: bold;
+      width: 40%;
+      background: #f9f9f9;
+    }
+
+    .legal-box {
+      border: 1.5pt solid #000;
+      padding: 0.15in 0.2in;
+      margin: 0.2in 0;
+      font-size: 10pt;
+      text-align: justify;
+      line-height: 1.4;
+    }
+
+    .legal-box p {
+      margin-bottom: 0.1in;
+    }
+
+    .legal-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .signature-section {
+      margin-top: 0.3in;
+    }
+
+    .signature-table {
+      width: 100%;
+      margin-top: 0.2in;
+    }
+
+    .signature-table td {
+      padding: 0.05in 0.1in;
+      vertical-align: bottom;
+    }
+
+    .signature-line {
+      border-bottom: 1pt solid #000;
+      min-height: 0.35in;
+      display: inline-block;
+      vertical-align: bottom;
+      position: relative;
+    }
+
+    .signature-box {
+      width: 2.5in;
+      height: 0.4in;
+      border-bottom: 1pt solid #000;
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      vertical-align: bottom;
+    }
+
+    .signature-box:hover {
+      background: rgba(240, 240, 255, 0.3);
+    }
+
+    .signature-placeholder {
+      position: absolute;
+      bottom: 0.05in;
+      left: 0.1in;
+      color: #888;
+      font-size: 9pt;
+      font-style: italic;
+    }
+
+    .signature-display {
+      position: absolute;
+      bottom: 0;
+      left: 0.05in;
+      right: 0.05in;
+      height: 0.35in;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .typed-signature {
+      font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+      font-size: 20pt;
+      color: #000080;
+    }
+
+    .drawn-signature {
+      max-height: 0.3in;
+      max-width: 100%;
+    }
+
+    .footer-section {
+      margin-top: 0.4in;
+      padding-top: 0.15in;
+      border-top: 0.5pt solid #999;
+      font-size: 9pt;
+      line-height: 1.3;
+    }
+
+    .control-panel {
+      background: #f5f5f5;
+      border-top: 2px solid #333;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 0 5px;
+      font-family: Arial, sans-serif;
+      border-radius: 6px;
+    }
+
+    .btn:hover:not(:disabled) {
+      background: #555;
+    }
+
+    .btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #333;
+      border: 2px solid #333;
+    }
+
+    .btn-secondary:hover {
+      background: #f0f0f0;
+    }
+
+    .status-msg {
+      margin: 15px 0;
+      padding: 10px;
+      display: none;
+      border-radius: 4px;
+    }
+
+    .status-msg.show {
+      display: block;
+    }
+
+    .status-msg.success {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .status-msg.error {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .status-msg.info {
+      background: #d1ecf1;
+      color: #0c5460;
+    }
+
+    .loading-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loading-overlay.active {
+      display: flex;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid #333;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 5px;
+      width: 90%;
+      max-width: 450px;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .modal-title {
+      font-size: 18pt;
+      font-weight: bold;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 24pt;
+      cursor: pointer;
+      padding: 0;
+      color: #666;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    .tab-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: white;
+      cursor: pointer;
+    }
+
+    .tab-btn.active {
+      background: #333;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .type-input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ccc;
+      font-size: 24pt;
+      text-align: center;
+      font-family: 'Brush Script MT', cursive;
+      color: #000080;
+    }
+
+    .canvas-container {
+      border: 1px solid #ccc;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .form-footer {
+      margin-top: 40px;
+      text-align: center;
+      padding-top: 30px;
+      border-top: 2px solid var(--border-light);
+    }
+
+    .form-footer p {
+      color: var(--text-light);
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .form-footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .form-footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-container {
+        padding: 15px 30px;
+      }
+      
+      .navbar-links {
+        position: fixed;
+        top: 73px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.25s ease;
+        gap: 25px;
+      }
+      
+      .navbar-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .navbar-links a.active::after {
+        bottom: -8px;
+      }
+      
+      .mobile-menu-btn {
+        display: flex;
+      }
+      
+      .navbar-cta {
+        display: none;
+      }
+
+      .form-section {
+        padding: 100px 0 70px;
+      }
+      
+      .form-container {
+        padding: 35px 25px;
+        margin: 0 15px;
+      }
+      
+      .form-header h1 {
+        font-size: 2.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar-container {
+        padding: 12px 20px;
+      }
+      
+      .navbar-logo {
+        height: 35px;
+      }
+      
+      .navbar-links {
+        top: 68px;
+      }
+
+      .form-section {
+        padding: 85px 0 60px;
+      }
+      
+      .form-container {
+        padding: 25px 20px;
+        margin: 0 10px;
+      }
+      
+      .form-header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        margin: 0;
+      }
+
+      .navbar,
+      .control-panel,
+      .loading-overlay,
+      .modal,
+      .form-header,
+      .form-footer {
+        display: none !important;
+      }
+
+      .page-container {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        box-shadow: none;
+        padding: 0.75in;
+        page-break-after: always;
+      }
+
+      .field-input {
+        border-bottom: 1px solid #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .buyer-table,
+      .financial-table,
+      .legal-box {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .signature-box {
+        border-bottom: 1px solid #000 !important;
+      }
+    }
+
+    .field-input.error {
+      background: #ffe0e0;
+      border-bottom: 2px solid #d00;
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="navbar-container">
-            <a href="/" class="navbar-brand" aria-label="Rio Tierra Home">
-                <img src="/Rio Tierra Logo.webp" 
-                     alt="Rio Tierra Logo" 
-                     class="navbar-logo" 
-                     width="65" 
-                     height="65">
-            </a>
-            <div class="navbar-links" role="menubar">
-                <a href="/" role="menuitem">Home</a>
-                <a href="/sales/" role="menuitem">Sales</a>
-                <a href="#individual-application" class="active" role="menuitem" aria-current="page">Individual Application</a>
-            </div>
-            <div class="navbar-right">
-                <a href="#individual-application" class="navbar-cta">Apply Now</a>
-                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navbar-links">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-brand" aria-label="Rio Tierra Home">
+        <img src="/Rio Tierra Logo.webp" 
+             alt="Rio Tierra Logo" 
+             class="navbar-logo" 
+             width="65" 
+             height="65">
+      </a>
+      <div class="navbar-links" role="menubar">
+        <a href="/" role="menuitem">Home</a>
+        <a href="/sales/" role="menuitem">Sales</a>
+        <a href="#contact" class="active" role="menuitem" aria-current="page">Individual Application</a>
+      </div>
+      <div class="navbar-right">
+        <a href="#contact" class="navbar-cta">Get In Touch</a>
+        <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navbar-links">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="form-section" id="individual-application" aria-labelledby="form-heading">
+      <div class="container">
+        <div class="form-container">
+          <header class="form-header">
+            <h1 id="form-heading">Individual Application Form</h1>
+          </header>
+          <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="page-container" id="documentPage">
+        <div class="form-number">Form 2024-OFFER-001</div>
+        
+        <div class="header-section">
+            <h1 class="main-title">OFFER TO PURCHASE VACANT PROPERTY</h1>
         </div>
-    </nav>
 
-    <main>
-        <section class="form-section" id="individual-application" aria-labelledby="form-heading">
-            <div class="container">
-                <div class="form-container">
-                    <header class="form-header">
-                        <h1 id="form-heading">Individual Application Form</h1>
-                        <p>Please fill out this form to submit your offer to purchase a vacant property in our exclusive communities.</p>
-                    </header>
-                    
-                    <div class="document-content">
-                        <div class="header-text">
-                            Your actual rate, payment and costs could be higher. Get an official Loan Estimate before choosing a loan.
-                        </div>
-
-                        <h2 class="title">
-                            OFFER TO PURCHASE VACANT PROPERTY
-                        </h2>
-
-                        <form id="property-form" novalidate>
-                            <div class="seller-line">
-                                <strong>Seller:</strong> Los Parientes RGV, LLC, P.O. Box 610, McAllen, Texas 78505
-                            </div>
-
-                            <div class="property-line">
-                                <span class="field-label">Lot#:</span>
-                                <input type="text" name="lot" class="underlined-field" style="width: 80px;" required aria-label="Lot number" id="lot">
-                                <span class="error-message" id="lot-error">Lot # is required.</span>
-                                <span class="field-label">Block#:</span>
-                                <input type="text" name="block" class="underlined-field" style="width: 80px;" required aria-label="Block number" id="block">
-                                <span class="error-message" id="block-error">Block # is required.</span>
-                                <span>Subdivision: Lunar Estates Subdivision Section II, Cameron County, TX</span>
-                            </div>
-
-                            <h3 class="section-heading">Buyer Information</h3>
-                            <div class="buyer-section">
-                                <div class="buyer-column">
-                                    <div class="buyer-header">Primary Buyer</div>
-                                    
-                                    <div class="field-line">
-                                        <input type="text" name="buyer_name" class="underlined-field name-field" required 
-                                               aria-label="Buyer full name" placeholder="Full Name" id="buyer_name">
-                                        <span class="error-message" id="buyer_name-error">Please enter the buyer's full name.</span>
-                                    </div>
-                                    
-                                    <div class="field-line">
-                                        <span class="field-label">Email:</span>
-                                        <input type="email" name="buyer_email" class="underlined-field email-field" required 
-                                               aria-label="Buyer email address" placeholder="email@example.com" id="buyer_email">
-                                        <span class="error-message" id="buyer_email-error">Please enter a valid email address.</span>
-                                    </div>
-
-                                    <div class="field-line">
-                                        <span class="field-label">Address:</span>
-                                        <input type="text" name="buyer_address" class="underlined-field address-field" required 
-                                               aria-label="Buyer street address" placeholder="Street Address" id="buyer_address">
-                                        <span class="error-message" id="buyer_address-error">Street address is required.</span>
-                                    </div>
-
-                                    <div class="field-line">
-                                        <span class="field-label">City, State, Zip:</span>
-                                        <input type="text" name="buyer_city_state_zip" class="underlined-field address-field" required 
-                                               aria-label="Buyer city, state, and zip code" placeholder="City, State, Zip" id="buyer_city_state_zip">
-                                        <span class="error-message" id="buyer_city_state_zip-error">City, State, and Zip are required.</span>
-                                    </div>
-
-                                    <div class="field-line">
-                                        <span class="field-label">Phone:</span>
-                                        <input type="tel" name="buyer_phone" class="underlined-field phone-field" required 
-                                               aria-label="Buyer phone number" placeholder="(XXX) XXX-XXXX" id="buyer_phone">
-                                        <span class="error-message" id="buyer_phone-error">Phone number is required.</span>
-                                    </div>
-                                    <div class="field-line">
-                                        <span class="field-label">SSN:</span>
-                                        <input type="text" name="buyer_ssn" class="underlined-field ssn-field" required 
-                                               aria-label="Buyer Social Security Number" placeholder="XXX-XX-XXXX" id="buyer_ssn">
-                                        <span class="error-message" id="buyer_ssn-error">SSN is required.</span>
-                                    </div>
-                                    <div class="field-line">
-                                        <span class="field-label">Military (Y/N):</span>
-                                        <input type="text" name="buyer_military" class="underlined-field military-field" aria-label="Buyer military status Yes or No" id="buyer_military">
-                                    </div>
-                                    <div class="field-line">
-                                        <span class="field-label">Marital Status:</span>
-                                        <input type="text" name="buyer_marital_status" class="underlined-field status-field" aria-label="Buyer marital status" id="buyer_marital_status">
-                                    </div>
-                                </div>
-
-                                <div class="buyer-column">
-                                    <div class="buyer-header">Co-Buyer (Optional)</div>
-                                    
-                                    <div class="field-line">
-                                        <input type="text" name="cobuyer_name" class="underlined-field name-field" 
-                                               aria-label="Co-Buyer full name" placeholder="Full Name" id="cobuyer_name">
-                                    </div>
-                                    <div class="field-line">
-                                        <span class="field-label">Email:</span>
-                                        <input type="email" name="cobuyer_email" class="underlined-field email-field" 
-                                               aria-label="Co-Buyer email address" placeholder="email@example.com" id="cobuyer_email">
-                                    </div>
-                                    <div class="field-line">
-                                        <span class="field-label">Address:</span>
-                                        <input type="text" name="cobuyer_address" class="underlined-field address-field" 
-                                               aria-label="Co-Buyer street address" placeholder="Street Address" id="cobuyer_address">
-                                    </div>
-                                    <div class="field-line">
-                                        <span class="field-label">City, State, Zip:</span>
-                                        <input type="text" name="cobuyer_city_state_zip" class="underlined-field address-field" 
-                                               aria-label="Co-Buyer city, state, and zip code" placeholder="City, State, Zip" id="cobuyer_city_state_zip">
-                                    </div>
-                                    <div class="field-line">
-                                        <span class="field-label">Phone:</span>
-                                        <input type="tel" name="cobuyer_phone" class="underlined-field phone-field" 
-                                               aria-label="Co-Buyer phone number" placeholder="(XXX) XXX-XXXX" id="cobuyer_phone">
-                                    </div>
-                                    <div class="field-line">
-                                        <span class="field-label">SSN:</span>
-                                        <input type="text" name="cobuyer_ssn" class="underlined-field ssn-field" 
-                                               aria-label="Co-Buyer Social Security Number" placeholder="XXX-XX-XXXX" id="cobuyer_ssn">
-                                    </div>
-                                    <div class="field-line">
-                                        <span class="field-label">Military (Y/N):</span>
-                                        <input type="text" name="cobuyer_military" class="underlined-field military-field" aria-label="Co-Buyer military status Yes or No" id="cobuyer_military">
-                                    </div>
-                                    <div class="field-line">
-                                        <span class="field-label">Marital Status:</span>
-                                        <input type="text" name="cobuyer_marital_status" class="underlined-field status-field" aria-label="Co-Buyer marital status" id="cobuyer_marital_status">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h3 class="section-heading">Financial Details</h3>
-                            <div class="financial-section">
-                                <div class="financial-line">
-                                    <span class="field-label">Purchase Price: $</span>
-                                    <input type="number" name="purchase_price" class="underlined-field financial-field" required aria-label="Purchase price" id="purchase_price" step="0.01">
-                                    <span class="error-message" id="purchase_price-error">Purchase price is required.</span>
-                                </div>
-                                <div class="financial-line">
-                                    <span class="field-label">Down Payment: $</span>
-                                    <input type="number" name="down_payment" class="underlined-field financial-field" required aria-label="Down payment" id="down_payment" step="0.01">
-                                    <span class="error-message" id="down_payment-error">Down payment is required.</span>
-                                </div>
-                                <div class="financial-line">
-                                    <span class="field-label">Loan Amount: $</span>
-                                    <input type="number" name="loan_amount" class="underlined-field financial-field" required aria-label="Loan amount" id="loan_amount" step="0.01">
-                                    <span class="error-message" id="loan_amount-error">Loan amount is required.</span>
-                                </div>
-                                <div class="financial-line">
-                                    <span class="field-label">Interest Rate (%):</span>
-                                    <input type="text" name="interest_rate" class="underlined-field financial-field" required aria-label="Interest rate" id="interest_rate" placeholder="e.g., 10%">
-                                    <span class="error-message" id="interest_rate-error">Interest rate is required.</span>
-                                </div>
-                                <div class="financial-line">
-                                    <span class="field-label">Monthly Payment: $</span>
-                                    <input type="number" name="monthly_payment" class="underlined-field financial-field" required aria-label="Monthly payment" id="monthly_payment" step="0.01">
-                                    <span class="error-message" id="monthly_payment-error">Monthly payment is required.</span>
-                                </div>
-                                <div class="financial-line">
-                                    <span class="field-label">Terms:</span>
-                                    <input type="number" name="loan_terms_months" class="underlined-field term-field" required aria-label="Loan terms in months" id="loan_terms_months">
-                                    <span>Months (</span>
-                                    <input type="number" name="loan_terms_years" class="underlined-field term-field" required aria-label="Loan terms in years" id="loan_terms_years">
-                                    <span>Years)</span>
-                                    <span class="error-message" id="loan_terms_months-error">Loan terms in months are required.</span>
-                                    <span class="error-message" id="loan_terms_years-error">Loan terms in years are required.</span>
-                                </div>
-                            </div>
-
-                            <div class="sample-section">
-                                <div class="sample-title">SAMPLE</div>
-                                <div class="sample-details">
-                                    Terms are based on a purchase price of $50,000, $5,000 down, $45,000 loan, 10% interest, for 10 years
-                                </div>
-                                <table class="payment-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Loan Amount</th>
-                                            <th>Interest</th>
-                                            <th>Monthly Payment</th>
-                                            <th>Terms</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>$45,000.00</td>
-                                            <td>10%</td>
-                                            <td>$594.88</td>
-                                            <td>120 Months</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <div class="disclaimer-text">
-                                <p class="disclaimer-paragraph">
-                                    This offer is subject to the review and acceptance by Los Parientes RGV, LLC. All terms and conditions are subject to change based on credit approval and current market rates. Buyer acknowledges that this offer is for vacant land and any future construction will be subject to applicable zoning laws and building codes. Buyer is encouraged to perform their own due diligence regarding the property.
-                                </p>
-                                <p class="disclaimer-paragraph">
-                                    Upon acceptance of this offer, a formal sales contract will be prepared and presented to the Buyer for signature. The down payment is non-refundable unless the offer is rejected by Los Parientes RGV, LLC.
-                                </p>
-                                <p class="disclaimer-paragraph">
-                                    Los Parientes RGV, LLC reserves the right to reject any offer for any reason. This document is an offer and not a binding contract until a formal sales agreement is executed by both parties.
-                                </p>
-                            </div>
-
-                            <h3 class="section-heading">Signatures</h3>
-                            <div class="signature-lines">
-                                <div class="signature-line">
-                                    <span class="signature-label">Buyer Signature:</span>
-                                    <div class="signature-underline" data-signature-for="buyer_signature" id="buyer_signature_line" role="button" tabindex="0" aria-label="Click to sign as Buyer">
-                                        <div class="signature-display" id="buyer_signature_display"></div>
-                                    </div>
-                                    <input type="hidden" name="buyer_signature_data" id="buyer_signature_data">
-                                    <div class="date-section">
-                                        <span class="field-label">Date:</span>
-                                        <input type="text" name="buyer_signature_date" class="underlined-field date-underline" aria-label="Buyer signature date" id="buyer_signature_date" readonly>
-                                    </div>
-                                    <span class="error-message" id="buyer_signature_line-error">Buyer signature is required.</span>
-                                </div>
-
-                                <div class="signature-line">
-                                    <span class="signature-label">Co-Buyer Signature:</span>
-                                    <div class="signature-underline" data-signature-for="cobuyer_signature" id="cobuyer_signature_line" role="button" tabindex="0" aria-label="Click to sign as Co-Buyer">
-                                        <div class="signature-display" id="cobuyer_signature_display"></div>
-                                    </div>
-                                    <input type="hidden" name="cobuyer_signature_data" id="cobuyer_signature_data">
-                                    <div class="date-section">
-                                        <span class="field-label">Date:</span>
-                                        <input type="text" name="cobuyer_signature_date" class="underlined-field date-underline" aria-label="Co-Buyer signature date" id="cobuyer_signature_date" readonly>
-                                    </div>
-                                    <span class="error-message" id="cobuyer_signature_line-error">Co-Buyer signature is required.</span>
-                                </div>
-                            </div>
-
-                            <div class="mortgage-footer">
-                                NOT A COMMITMENT TO LEND. Los Parientes RGV, LLC is not a mortgage lender.
-                            </div>
-
-                            <div class="submit-section">
-                                <div class="loading" style="display: none;">
-                                    <div class="spinner"></div>
-                                    <p>Submitting your offer...</p>
-                                </div>
-                                <button type="submit" class="submit-btn" id="form-submit-btn">Submit Offer</button>
-                                <p id="property-form-status" class="status-message"></p>
-                            </div>
-                        </form>
-                    </div>
-
-                    <footer class="form-footer">
-                        <p>Having trouble with the form? Contact us at <a href="mailto:info@riotierra.com" aria-label="Email Rio Tierra">info@riotierra.com</a> or call <a href="tel:+19565551234" aria-label="Call Rio Tierra">(956) 555-1234</a>.</p>
-                    </footer>
-                </div>
+        <form id="purchaseForm" novalidate>
+            <div class="info-line">
+                <span class="label">Seller:</span>
+                <span>SNT RGV, LLC, P.O. Box 610, McAllen, Texas 78505</span>
             </div>
-        </section>
-    </main>
-    
-    <div id="signatureModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="signatureModalTitle" style="display: none;">
+
+            <div class="info-line">
+                <span class="label">Lot#</span>
+                <input type="text" class="field-input field-xs" id="lot" name="lot" required>
+                
+                <span class="label" style="margin-left: 0.3in;">Block#</span>
+                <input type="text" class="field-input field-xs" id="block" name="block" required>
+                
+                <span class="label" style="margin-left: 0.3in;">Subdivision:</span>
+                <span>Florida Estates Subdivision Section II, Cameron County, TX</span>
+            </div>
+
+            <table class="buyer-table">
+                <tr>
+                    <td class="section-header divider" colspan="2">Buyer</td>
+                    <td class="section-header" colspan="2">Co-Buyer</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="divider" style="padding: 0.15in;">
+                        <div class="info-row">
+                            <span class="info-label">Name:</span>
+                            <input type="text" class="field-input field-l" id="buyerName" name="buyerName" required>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Email:</span>
+                            <input type="email" class="field-input field-l" id="buyerEmail" name="buyerEmail" required>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Address:</span>
+                            <input type="text" class="field-input field-l" id="buyerAddress" name="buyerAddress" required>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">City:</span>
+                            <input type="text" class="field-input field-m" id="buyerCity" name="buyerCity" required>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">State:</span>
+                            <input type="text" class="field-input field-xs" id="buyerState" name="buyerState" maxlength="2" required>
+                            <span class="info-label" style="margin-left: 0.1in;">ZIP:</span>
+                            <input type="text" class="field-input field-s" id="buyerZip" name="buyerZip" required>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Phone:</span>
+                            <input type="tel" class="field-input field-m" id="buyerPhone" name="buyerPhone" required>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">SSN:</span>
+                            <input type="text" class="field-input field-m" id="buyerSSN" name="buyerSSN" placeholder="000-00-0000" required>
+                        </div>
+                    </td>
+                    <td colspan="2" style="padding: 0.15in;">
+                        <div class="info-row">
+                            <span class="info-label">Name:</span>
+                            <input type="text" class="field-input field-l" id="cobuyerName" name="cobuyerName">
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Email:</span>
+                            <input type="email" class="field-input field-l" id="cobuyerEmail" name="cobuyerEmail">
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Address:</span>
+                            <input type="text" class="field-input field-l" id="cobuyerAddress" name="cobuyerAddress">
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">City:</span>
+                            <input type="text" class="field-input field-m" id="cobuyerCity" name="cobuyerCity">
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">State:</span>
+                            <input type="text" class="field-input field-xs" id="cobuyerState" name="cobuyerState" maxlength="2">
+                            <span class="info-label" style="margin-left: 0.1in;">ZIP:</span>
+                            <input type="text" class="field-input field-s" id="cobuyerZip" name="cobuyerZip">
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Phone:</span>
+                            <input type="tel" class="field-input field-m" id="cobuyerPhone" name="cobuyerPhone">
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">SSN:</span>
+                            <input type="text" class="field-input field-m" id="cobuyerSSN" name="cobuyerSSN" placeholder="000-00-0000">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="financial-table">
+                <tr>
+                    <td class="label-cell">Purchase Price:</td>
+                    <td>$ <input type="number" class="field-input field-m" id="purchasePrice" name="purchasePrice" step="0.01" required></td>
+                </tr>
+                <tr>
+                    <td class="label-cell">Down Payment:</td>
+                    <td>$ <input type="number" class="field-input field-m" id="downPayment" name="downPayment" step="0.01" required></td>
+                </tr>
+                <tr>
+                    <td class="label-cell">Amount to Finance:</td>
+                    <td>$ <input type="number" class="field-input field-m" id="loanAmount" name="loanAmount" readonly></td>
+                </tr>
+                <tr>
+                    <td class="label-cell">Interest Rate:</td>
+                    <td><strong>10.00%</strong> per annum</td>
+                </tr>
+                <tr>
+                    <td class="label-cell">Term of Loan:</td>
+                    <td>
+                        <input type="number" class="field-input field-xs" id="termMonths" name="termMonths" required> months
+                        (<input type="number" class="field-input field-xs" id="termYears" name="termYears"> years)
+                    </td>
+                </tr>
+            </table>
+
+            <div class="legal-box">
+                <p>An Owner's Title Insurance Policy is not provided in this sale. Buyer may obtain a Title Insurance Policy at Buyer's expense from a title company of Buyer's choice.</p>
+                
+                <p>Buyer is offering to purchase the property described herein "AS IS" in its present condition. The Property is subject to certain restrictions which Buyer acknowledges having received a copy of.</p>
+                
+                <p>The documents signed at the closing of the sale and purchase will contain the entire agreement. Any promise or representation by any salesperson or employee of the Seller in writing or orally that is different than the documents signed at the closing is void. Any dispute between Seller and Buyer related to this agreement which is not resolved through informal discussion will be referred to a mutually acceptable mediation service or provider. The parties to the mediation shall bear the mediation cost equally.</p>
+                
+                <p>Notice Regarding Possible Annexation: If the property that is the subject of this Contract is located outside the limits of a municipality, the property may now or later be included in the extraterritorial jurisdiction of a municipality and may now or later be subject to annexation by the municipality.</p>
+            </div>
+
+            <div class="signature-section">
+                <table class="signature-table">
+                    <tr>
+                        <td style="width: 10%;">Buyer:</td>
+                        <td style="width: 35%;">
+                            <div class="signature-box" id="buyerSignatureBox" tabindex="0">
+                                <span class="signature-placeholder">Click here to sign</span>
+                                <div class="signature-display" id="buyerSignatureDisplay"></div>
+                            </div>
+                        </td>
+                        <td style="width: 10%; text-align: right;">Date:</td>
+                        <td style="width: 20%;">
+                            <span class="signature-line" style="width: 100%;" id="buyerDate"></span>
+                        </td>
+                        <td style="width: 25%; text-align: center;">
+                            <span style="font-size: 9pt;">(Office use only)</span>
+                        </td>
+                    </tr>
+                    <tr style="height: 0.15in;"></tr>
+                    <tr>
+                        <td>Co-Buyer:</td>
+                        <td>
+                            <div class="signature-box" id="cobuyerSignatureBox" tabindex="0">
+                                <span class="signature-placeholder">Click here to sign</span>
+                                <div class="signature-display" id="cobuyerSignatureDisplay"></div>
+                            </div>
+                        </td>
+                        <td style="text-align: right;">Date:</td>
+                        <td>
+                            <span class="signature-line" style="width: 100%;" id="cobuyerDate"></span>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="footer-section">
+                <p>Offer to Purchase Vacant Property - Rio Tierra</p>
+                <p style="margin-top: 0.05in;">1600 Wildcat Dr, Portland, Texas 78374 | NMLS #2263990</p>
+            </div>
+
+            <input type="hidden" id="buyerSignatureData" name="buyerSignatureData">
+            <input type="hidden" id="cobuyerSignatureData" name="cobuyerSignatureData">
+        </form>
+    </div>
+
+    <div class="control-panel">
+        <div id="statusMsg" class="status-msg"></div>
+        <button type="button" class="btn" id="submitBtn">Submit Application</button>
+        <div id="successBtns" style="display: none; margin-top: 15px;">
+            <button type="button" class="btn btn-secondary" id="downloadBtn">Download PDF</button>
+            <button type="button" class="btn btn-secondary" id="printBtn">Print Document</button>
+        </div>
+    </div>
+
+    <!-- Signature Modal -->
+    <div id="signatureModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 id="signatureModalTitle" class="modal-title">Sign Document</h3>
-                <button class="close-btn" aria-label="Close signature dialog">&times;</button>
+                <h2 class="modal-title">Add Signature</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
             </div>
-            <div class="signature-options">
-                <button type="button" id="drawOption" class="option-btn">Draw Signature</button>
-                <button type="button" id="typeOption" class="option-btn active">Type Signature</button>
+            
+            <div class="tab-buttons">
+                <button class="tab-btn active" id="typeTab">Type</button>
+                <button class="tab-btn" id="drawTab">Draw</button>
             </div>
-            <div class="signature-input-area">
-                <div id="drawArea" class="draw-area">
-                    <canvas id="signatureCanvas" class="modal-signature-canvas" role="img" aria-label="Drawing area for signature"></canvas>
-                </div>
-                <div id="typeArea" class="type-area active">
-                    <input type="text" id="signatureInput" class="signature-input" placeholder="Type your full name here to sign" aria-label="Type your signature">
-                </div>
-                <div id="modalSignaturePreview" class="signature-preview">
-                    <p>Type your signature above</p>
-                </div>
+            
+            <div id="typeContent" class="tab-content active">
+                <input type="text" class="type-input" id="signatureTypeInput" placeholder="Type your signature">
             </div>
-            <div class="modal-controls">
-                <button type="button" id="clearSignature" class="modal-btn btn-clear">Clear</button>
-                <button type="button" id="saveSignature" class="modal-btn btn-save" disabled>Save Signature</button>
-                <button type="button" id="cancelSignature" class="modal-btn btn-cancel">Cancel</button>
+            
+            <div id="drawContent" class="tab-content">
+                <canvas id="signatureCanvas" class="canvas-container" width="400" height="150"></canvas>
+            </div>
+            
+            <div style="margin-top: 20px; text-align: right;">
+                <button class="btn btn-secondary" id="clearBtn" style="margin-right: 10px;">Clear</button>
+                <button class="btn" id="saveBtn">Save</button>
             </div>
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-about">
-                        <div class="footer-logo">
-                            <img src="/Rio Tierra Logo.webp" alt="Rio Tierra Logo" width="70" height="70">
-                        </div>
-                        <p class="footer-desc">Rio Tierra Real Estate specializes in creating exceptional communities with a focus on quality, sustainability, and innovative design.</p>
-                    </div>
-                    <div class="footer-links-container">
-                        <h4 class="footer-title">Quick Links</h4>
-                        <ul class="footer-links">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/sales/">Sales</a></li>
-                            <li><a href="#individual-application">Individual Application</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-container">
-                        <h4 class="footer-title">Our Communities</h4>
-                        <ul class="footer-links">
-                            <li><a href="/Lunar-Estates-1/">Lunar Estates - Phase 1</a></li>
-                            <li><a href="/Lunar-Estates-2/">Lunar Estates - Phase 2</a></li>
-                            <li><a href="/Florida-Estates-2/">Florida Estates - Phase 2</a></li>
-                            <li><a href="FEP3.html">Florida Estates - Phase 3</a></li>
-                            <li><a href="PGP3S1.html">Palmetto Grove - P3S1</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-contact">
-                        <h4 class="footer-title">Contact Info</h4>
-                        <div class="contact-info">
-                            <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
-                            <p>info@riotierra.com</p>
-                        </div>
-                        <div class="contact-info">
-                            <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
-                            <p>(956) 555-1234</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <footer class="form-footer">
+            <p>Need assistance? <a href="#contact">Contact our team</a> for help with your application.</p>
+          </footer>
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-content">
-                    <p class="copyright">&copy; 2025 Rio Tierra Real Estate. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-        <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
-            <i class="fas fa-chevron-up" aria-hidden="true"></i>
-        </button>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script>
+  <script>
+    // UPDATED BACKEND URL - Your actual Render URL
+    const BACKEND_URL = 'https://holand-pdf-storage.onrender.com';
 
-// --- Global variables ---
-let currentSignatureTargetId = ''; // To keep track of which signature field is being signed (e.g., 'buyer' or 'cobuyer')
-let signaturePad = null; // Declare signaturePad globally
+    // Initialize EmailJS
+    emailjs.init('YvkwnfiMmHhEc2zjh');
 
-document.addEventListener('DOMContentLoaded', () => {
-    // --- Get DOM Elements ---
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navbarLinks = document.querySelector('.navbar-links');
+      
+      if (mobileMenuBtn && navbarLinks) {
+        mobileMenuBtn.addEventListener('click', function() {
+          const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+          
+          mobileMenuBtn.classList.toggle('active');
+          navbarLinks.classList.toggle('active');
+          
+          mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+        });
+        
+        document.addEventListener('click', function(e) {
+          if (!mobileMenuBtn.contains(e.target) && !navbarLinks.contains(e.target)) {
+            mobileMenuBtn.classList.remove('active');
+            navbarLinks.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+        
+        navbarLinks.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            mobileMenuBtn.classList.remove('active');
+            navbarLinks.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.focus();
+          }
+        });
+      }
 
-    // Signature boxes (the clickable areas)
-    const buyerSignatureLine = document.getElementById('buyer_signature_line');
-    const coBuyerSignatureLine = document.getElementById('cobuyer_signature_line');
+      initializeCanvas();
+    });
+
+    // Form functionality
+    const form = document.getElementById('purchaseForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const printBtn = document.getElementById('printBtn');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const statusMsg = document.getElementById('statusMsg');
+    const successBtns = document.getElementById('successBtns');
 
     // Modal elements
-    const signatureModal = document.getElementById('signatureModal');
-    const closeModalBtn = signatureModal.querySelector('.close-btn');
-    const cancelModalBtn = document.getElementById('cancelSignature'); // Using ID as it's more specific
-    const clearSignatureBtn = document.getElementById('clearSignature'); // Using ID
-    const saveSignatureBtn = document.getElementById('saveSignature'); // Using ID
+    const modal = document.getElementById('signatureModal');
+    const closeModal = document.getElementById('closeModal');
+    const typeTab = document.getElementById('typeTab');
+    const drawTab = document.getElementById('drawTab');
+    const typeContent = document.getElementById('typeContent');
+    const drawContent = document.getElementById('drawContent');
+    const signatureTypeInput = document.getElementById('signatureTypeInput');
+    const signatureCanvas = document.getElementById('signatureCanvas');
+    const clearBtn = document.getElementById('clearBtn');
+    const saveBtn = document.getElementById('saveBtn');
 
-    // Tab buttons for Draw/Type
-    const drawOptionBtn = document.getElementById('drawOption');
-    const typeOptionBtn = document.getElementById('typeOption');
+    // Signature boxes
+    const buyerSigBox = document.getElementById('buyerSignatureBox');
+    const cobuyerSigBox = document.getElementById('cobuyerSignatureBox');
 
-    // Content areas for Draw/Type
-    const drawArea = document.getElementById('drawArea');
-    const typeArea = document.getElementById('typeArea');
+    // State variables
+    let currentSigTarget = null;
+    let ctx = null;
+    let isDrawing = false;
+    let generatedPDF = null;
+    let permanentPdfUrl = null;
 
-    // Signature input elements within the modal
-    const signatureCanvas = document.getElementById('signatureCanvas'); // Corrected ID: 'signatureCanvas'
-    const signatureInput = document.getElementById('signatureInput');
-    const modalSignaturePreview = document.getElementById('modalSignaturePreview');
+    // Set today's date
+    const today = new Date();
+    const dateStr = `${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getDate().toString().padStart(2, '0')}/${today.getFullYear()}`;
+    document.getElementById('buyerDate').textContent = dateStr;
+    document.getElementById('cobuyerDate').textContent = dateStr;
 
+    // FIXED: Canvas initialization
+    function initializeCanvas() {
+      if (signatureCanvas) {
+        signatureCanvas.width = signatureCanvas.offsetWidth;
+        signatureCanvas.height = signatureCanvas.offsetHeight;
+        
+        ctx = signatureCanvas.getContext('2d');
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = '#000080';
+        
+        // Set white background
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+        ctx.fillStyle = '#000080';
+      }
+    }
 
-    // Only initialize if the canvas element exists and the modal is ready
-    if (signatureCanvas) {
- 
-        const rect = signatureCanvas.getBoundingClientRect();
-        signatureCanvas.width = rect.width;
-        signatureCanvas.height = rect.height;
+    // FIXED: Canvas drawing setup
+    function setupCanvasDrawing() {
+      if (!signatureCanvas || !ctx) return;
 
-        signaturePad = new SignaturePad(signatureCanvas, {
-            backgroundColor: 'rgb(255, 255, 255)', // Necessary for clear()
-            penColor: 'rgb(0, 0, 0)'
-        });
+      // Mouse events
+      signatureCanvas.addEventListener('mousedown', startDrawing);
+      signatureCanvas.addEventListener('mousemove', draw);
+      signatureCanvas.addEventListener('mouseup', stopDrawing);
+      signatureCanvas.addEventListener('mouseout', stopDrawing);
 
-        // Event listener for drawing on the canvas to enable save button
-        signaturePad.onEnd = () => {
-            saveSignatureBtn.disabled = signaturePad.isEmpty();
-            updateModalSignaturePreview();
+      // Touch events
+      signatureCanvas.addEventListener('touchstart', handleTouch);
+      signatureCanvas.addEventListener('touchmove', handleTouch);
+      signatureCanvas.addEventListener('touchend', stopDrawing);
+    }
+
+    function startDrawing(e) {
+      isDrawing = true;
+      const rect = signatureCanvas.getBoundingClientRect();
+      const x = (e.clientX - rect.left) * (signatureCanvas.width / rect.width);
+      const y = (e.clientY - rect.top) * (signatureCanvas.height / rect.height);
+      
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+    }
+
+    function draw(e) {
+      if (!isDrawing) return;
+      
+      const rect = signatureCanvas.getBoundingClientRect();
+      const x = (e.clientX - rect.left) * (signatureCanvas.width / rect.width);
+      const y = (e.clientY - rect.top) * (signatureCanvas.height / rect.height);
+      
+      ctx.lineTo(x, y);
+      ctx.stroke();
+    }
+
+    function stopDrawing() {
+      isDrawing = false;
+      ctx.beginPath();
+    }
+
+    function handleTouch(e) {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const mouseEvent = new MouseEvent(e.type === 'touchstart' ? 'mousedown' : 
+                                       e.type === 'touchmove' ? 'mousemove' : 'mouseup', {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      signatureCanvas.dispatchEvent(mouseEvent);
+    }
+
+    // Modal functions
+    function openModal(target) {
+      currentSigTarget = target;
+      modal.classList.add('active');
+      signatureTypeInput.value = '';
+      
+      setTimeout(() => {
+        initializeCanvas();
+        setupCanvasDrawing();
+        if (ctx) {
+          ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+          ctx.fillStyle = 'white';
+          ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+          ctx.fillStyle = '#000080';
+        }
+      }, 100);
+    }
+
+    function closeModalFn() {
+      modal.classList.remove('active');
+      currentSigTarget = null;
+    }
+
+    // Event listeners
+    closeModal.addEventListener('click', closeModalFn);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModalFn();
+    });
+
+    // Tab switching
+    typeTab.addEventListener('click', () => {
+      typeTab.classList.add('active');
+      drawTab.classList.remove('active');
+      typeContent.classList.add('active');
+      drawContent.classList.remove('active');
+    });
+
+    drawTab.addEventListener('click', () => {
+      drawTab.classList.add('active');
+      typeTab.classList.remove('active');
+      drawContent.classList.add('active');
+      typeContent.classList.remove('active');
+      
+      setTimeout(() => {
+        initializeCanvas();
+        setupCanvasDrawing();
+      }, 50);
+    });
+
+    // Clear and save signature
+    clearBtn.addEventListener('click', () => {
+      if (typeContent.classList.contains('active')) {
+        signatureTypeInput.value = '';
+      } else {
+        if (ctx) {
+          ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+          ctx.fillStyle = 'white';
+          ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+          ctx.fillStyle = '#000080';
+        }
+      }
+    });
+
+    saveBtn.addEventListener('click', () => {
+      if (!currentSigTarget) return;
+      
+      const display = currentSigTarget.querySelector('.signature-display');
+      const placeholder = currentSigTarget.querySelector('.signature-placeholder');
+      const dataField = currentSigTarget.id.includes('buyer') ? 
+        document.getElementById('buyerSignatureData') : 
+        document.getElementById('cobuyerSignatureData');
+      
+      if (typeContent.classList.contains('active') && signatureTypeInput.value.trim()) {
+        display.innerHTML = `<span class="typed-signature">${signatureTypeInput.value}</span>`;
+        dataField.value = signatureTypeInput.value;
+        placeholder.style.display = 'none';
+      } else if (drawContent.classList.contains('active') && ctx) {
+        const imageData = signatureCanvas.toDataURL();
+        const img = document.createElement('img');
+        img.src = imageData;
+        img.className = 'drawn-signature';
+        display.innerHTML = '';
+        display.appendChild(img);
+        dataField.value = imageData;
+        placeholder.style.display = 'none';
+      }
+      
+      closeModalFn();
+    });
+
+    // Signature box handlers
+    buyerSigBox.addEventListener('click', () => openModal(buyerSigBox));
+    cobuyerSigBox.addEventListener('click', () => openModal(cobuyerSigBox));
+
+    buyerSigBox.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(buyerSigBox);
+      }
+    });
+
+    cobuyerSigBox.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(cobuyerSigBox);
+      }
+    });
+
+    // Financial calculations
+    const purchasePrice = document.getElementById('purchasePrice');
+    const downPayment = document.getElementById('downPayment');
+    const loanAmount = document.getElementById('loanAmount');
+    const termMonths = document.getElementById('termMonths');
+    const termYears = document.getElementById('termYears');
+
+    function calculateLoan() {
+      const price = parseFloat(purchasePrice.value) || 0;
+      const down = parseFloat(downPayment.value) || 0;
+      loanAmount.value = (price - down).toFixed(2);
+    }
+
+    purchasePrice.addEventListener('input', calculateLoan);
+    downPayment.addEventListener('input', calculateLoan);
+
+    termMonths.addEventListener('input', function() {
+      const months = parseInt(this.value) || 0;
+      termYears.value = (months / 12).toFixed(1);
+    });
+
+    termYears.addEventListener('input', function() {
+      const years = parseFloat(this.value) || 0;
+      termMonths.value = Math.round(years * 12);
+    });
+
+    // Phone and SSN formatting
+    document.querySelectorAll('input[type="tel"]').forEach(input => {
+      input.addEventListener('input', function() {
+        let value = this.value.replace(/\D/g, '');
+        if (value.length >= 6) {
+          value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+        } else if (value.length >= 3) {
+          value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
+        }
+        this.value = value;
+      });
+    });
+
+    document.querySelectorAll('input[id*="SSN"]').forEach(input => {
+      input.addEventListener('input', function() {
+        let value = this.value.replace(/\D/g, '');
+        if (value.length >= 5) {
+          value = value.replace(/(\d{3})(\d{2})(\d{0,4})/, '$1-$2-$3');
+        } else if (value.length >= 3) {
+          value = value.replace(/(\d{3})(\d{0,2})/, '$1-$2');
+        }
+        this.value = value;
+      });
+    });
+
+    // Form validation
+    function validateForm() {
+      const required = [
+        'lot', 'block', 'buyerName', 'buyerEmail', 'buyerAddress',
+        'buyerCity', 'buyerState', 'buyerZip', 'buyerPhone', 'buyerSSN',
+        'purchasePrice', 'downPayment', 'termMonths'
+      ];
+      
+      let valid = true;
+      
+      document.querySelectorAll('.field-input').forEach(input => {
+        input.classList.remove('error');
+      });
+      
+      required.forEach(id => {
+        const field = document.getElementById(id);
+        if (!field.value || field.value.trim() === '') {
+          field.classList.add('error');
+          valid = false;
+        }
+      });
+      
+      const email = document.getElementById('buyerEmail');
+      if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.classList.add('error');
+        valid = false;
+      }
+      
+      if (!document.getElementById('buyerSignatureData').value) {
+        showStatus('Please add your signature before submitting.', 'error');
+        valid = false;
+      }
+      
+      return valid;
+    }
+
+    // Status message display
+    function showStatus(msg, type) {
+      statusMsg.textContent = msg;
+      statusMsg.className = `status-msg ${type} show`;
+    }
+
+    // PDF generation with optimized settings
+    async function generatePDF() {
+      try {
+        const controlPanel = document.querySelector('.control-panel');
+        const formHeader = document.querySelector('.form-header');
+        const formFooter = document.querySelector('.form-footer');
+        
+        controlPanel.style.display = 'none';
+        formHeader.style.display = 'none';
+        formFooter.style.display = 'none';
+        
+        if (typeof html2canvas === 'undefined' || typeof window.jspdf === 'undefined') {
+          await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+        
+        // OPTIMIZED: Reduced scale and quality for smaller file size
+        const options = {
+          scale: 1.5, // Reduced from 2
+          useCORS: true,
+          allowTaint: true,
+          backgroundColor: '#ffffff',
+          logging: false,
+          letterRendering: true,
+          windowWidth: 816,
+          windowHeight: 1056,
+          quality: 0.8 // Added quality setting
         };
-    }
-
-    // --- Event Listeners ---
-
-    // 1. Click on Buyer/Co-Buyer Signature Boxes to Open Modal
-    if (buyerSignatureLine) {
-        buyerSignatureLine.addEventListener('click', () => {
-            openSignatureModal('buyer'); // 'buyer' is the identifier for the specific signature field
+        
+        const element = document.getElementById('documentPage');
+        const canvas = await html2canvas(element, options);
+        
+        controlPanel.style.display = 'block';
+        formHeader.style.display = 'block';
+        formFooter.style.display = 'block';
+        
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({
+          orientation: 'portrait',
+          unit: 'in',
+          format: 'letter',
+          compress: true // Added compression
         });
+        
+        // OPTIMIZED: Compress image before adding to PDF
+        const imgData = canvas.toDataURL('image/jpeg', 0.8); // Use JPEG with 80% quality
+        pdf.addImage(imgData, 'JPEG', 0, 0, 8.5, 11);
+        
+        return pdf;
+        
+      } catch (error) {
+        console.error('PDF generation error:', error);
+        throw error;
+      }
     }
 
-    if (coBuyerSignatureLine) {
-        coBuyerSignatureLine.addEventListener('click', () => {
-            openSignatureModal('cobuyer'); // 'cobuyer' is the identifier
+    // BACKEND INTEGRATION: Upload PDF to S3 with better error handling
+    async function uploadPDFToBackend(pdf) {
+      try {
+        showStatus('Saving PDF permanently...', 'info');
+        
+        // IMPROVED: Get PDF as blob first, then convert to base64
+        const pdfBlob = pdf.output('blob');
+        console.log(`PDF blob size: ${pdfBlob.size} bytes (${(pdfBlob.size / 1024 / 1024).toFixed(2)} MB)`);
+        
+        // Convert blob to base64
+        const base64Data = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(pdfBlob);
         });
-    }
-
-    // 2. Modal Controls
-    if (closeModalBtn) {
-        closeModalBtn.addEventListener('click', closeModal);
-    }
-    if (cancelModalBtn) {
-        cancelModalBtn.addEventListener('click', closeModal);
-    }
-    if (clearSignatureBtn) {
-        clearSignatureBtn.addEventListener('click', clearSignatureInModal);
-    }
-    if (saveSignatureBtn) {
-        saveSignatureBtn.addEventListener('click', saveSignature);
-    }
-
-    // 3. Tab Switching in Modal
-    if (drawOptionBtn && typeOptionBtn) {
-        drawOptionBtn.addEventListener('click', () => {
-            setActiveTab('draw');
+        
+        const buyerName = document.getElementById('buyerName').value;
+        const originalName = `Purchase_Agreement_${buyerName.replace(/\s+/g, '_')}_${dateStr.replace(/\//g, '-')}.pdf`;
+        
+        console.log('Uploading to backend...');
+        const response = await fetch(`${BACKEND_URL}/upload-pdf-base64`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            pdfData: base64Data,
+            buyerName: buyerName,
+            originalName: originalName
+          })
         });
-        typeOptionBtn.addEventListener('click', () => {
-            setActiveTab('type');
-        });
-    }
-
-    // 4. Type Signature Input Event (for real-time preview and enabling save)
-    if (signatureInput) {
-        signatureInput.addEventListener('input', () => {
-            saveSignatureBtn.disabled = signatureInput.value.trim() === '';
-            updateModalSignaturePreview();
-        });
-    }
-
-    // --- Functions ---
-
-    /**
-     * Opens the signature modal and prepares it for signing.
-     * @param {string} target The identifier for which signature field is being signed ('buyer' or 'cobuyer').
-     */
-    function openSignatureModal(target) {
-        currentSignatureTargetId = target; // Store the target
-
-        // Reset modal state
-        clearSignatureInModal(); // Clear previous signature data in modal
-        signatureModal.style.display = 'flex'; // Make the modal visible!
-
-        // Determine which tab should be active by default or based on existing data
-        const signatureDisplayDiv = document.getElementById(`${target}_signature_display`);
-        const hiddenSignatureData = document.getElementById(`${target}_signature_data`);
-
-        if (hiddenSignatureData && hiddenSignatureData.value) {
-            // If there's existing data, try to re-populate the modal
-            const signatureType = hiddenSignatureData.getAttribute('data-signature-type');
-            if (signatureType === 'drawn' && signaturePad) {
-                setActiveTab('draw');
-                // You might want to load the signature onto the canvas here
-                // signaturePad.fromDataURL(hiddenSignatureData.value);
-            } else if (signatureType === 'typed') {
-                setActiveTab('type');
-                signatureInput.value = hiddenSignatureData.value;
-            }
-        } else {
-            // Default to the 'type' tab as it was 'active' in your HTML initially
-            // If you want 'draw' as default, change 'typeOptionBtn.classList.add('active')' in HTML
-            setActiveTab('type');
+        
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}));
+          console.error('Upload failed:', errorData);
+          throw new Error(`Upload failed: ${response.status} - ${errorData.error || 'Unknown error'}`);
         }
-
-        // Update preview based on current modal state
-        updateModalSignaturePreview();
-        // Disable save until new interaction, unless data was pre-filled and valid
-        saveSignatureBtn.disabled = !(signaturePad && !signaturePad.isEmpty()) && signatureInput.value.trim() === '';
-
-        // Request animation frame to ensure canvas size is correct after modal becomes visible
-        // This is crucial for SignaturePad to correctly draw.
-        if (signatureCanvas && drawArea.classList.contains('active')) {
-             requestAnimationFrame(() => {
-                const rect = signatureCanvas.getBoundingClientRect();
-                signatureCanvas.width = rect.width;
-                signatureCanvas.height = rect.height;
-                signaturePad.clear(); // Clear the canvas again after resize
-             });
-        }
+        
+        const result = await response.json();
+        console.log('Upload successful:', result);
+        return result.url;
+        
+      } catch (error) {
+        console.error('Backend upload error:', error);
+        throw new Error(`Failed to save PDF permanently: ${error.message}`);
+      }
     }
 
-    /**
-     * Hides the signature modal.
-     */
-    function closeModal() {
-        signatureModal.style.display = 'none'; // Hide the modal
-        currentSignatureTargetId = ''; // Clear target
-        clearSignatureInModal(); // Clear modal content on close
-    }
-
-    /**
-     * Clears the signature within the modal (both drawn and typed).
-     */
-    function clearSignatureInModal() {
-        if (signaturePad) {
-            signaturePad.clear(); // Clear canvas
+    // MAIN FORM SUBMISSION
+    submitBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      
+      if (!validateForm()) return;
+      
+      loadingOverlay.classList.add('active');
+      submitBtn.disabled = true;
+      
+      try {
+        // Step 1: Generate PDF
+        showStatus('Generating PDF...', 'info');
+        generatedPDF = await generatePDF();
+        
+        // Step 2: Upload to backend
+        permanentPdfUrl = await uploadPDFToBackend(generatedPDF);
+        
+        // Step 3: Send email with PDF link
+        showStatus('Sending email...', 'info');
+        const emailData = {
+          buyer_name: document.getElementById('buyerName').value,
+          buyer_email: document.getElementById('buyerEmail').value,
+          lot_number: document.getElementById('lot').value,
+          block_number: document.getElementById('block').value,
+          purchase_price: document.getElementById('purchasePrice').value,
+          submission_date: dateStr,
+          pdf_link: permanentPdfUrl
+        };
+        
+        await emailjs.send('service_vu3hz9m', 'template_t6sxp4j', emailData);
+        
+        // Success!
+        loadingOverlay.classList.remove('active');
+        showStatus('Application submitted successfully! PDF saved permanently and email sent.', 'success');
+        
+        submitBtn.style.display = 'none';
+        if (successBtns) {
+          successBtns.style.display = 'flex';
+          successBtns.style.justifyContent = 'center';
+          successBtns.style.gap = '10px';
         }
-        signatureInput.value = ''; // Clear typed input
-        saveSignatureBtn.disabled = true; // Disable save after clearing
-        updateModalSignaturePreview(); // Clear preview
-    }
+        
+      } catch (error) {
+        loadingOverlay.classList.remove('active');
+        submitBtn.disabled = false;
+        showStatus(`Submission failed: ${error.message}`, 'error');
+        console.error('Submission error:', error);
+      }
+    });
 
-    /**
-     * Sets the active tab (Draw or Type) in the signature modal.
-     * @param {'draw' | 'type'} tab The tab to activate.
-     */
-    function setActiveTab(tab) {
-        // Remove active class from both tabs and content areas
-        drawOptionBtn.classList.remove('active');
-        typeOptionBtn.classList.remove('active');
-        drawArea.classList.remove('active');
-        typeArea.classList.remove('active');
-
-        // Add active class to the selected tab and its content area
-        if (tab === 'draw') {
-            drawOptionBtn.classList.add('active');
-            drawArea.classList.add('active');
-            if (signaturePad) {
-                // Important: Resize canvas here to ensure it's drawn correctly after switching tabs/modal visibility
-                requestAnimationFrame(() => {
-                    const rect = signatureCanvas.getBoundingClientRect();
-                    signatureCanvas.width = rect.width;
-                    signatureCanvas.height = rect.height;
-                    signaturePad.clear(); // Clear canvas when switching to drawing
-                    // If you want to persist the drawn signature when switching tabs:
-                    // signaturePad.fromData(signaturePad.toData());
-                });
+    // Download PDF with Chrome-specific fixes
+    downloadBtn.addEventListener('click', async () => {
+      if (permanentPdfUrl) {
+        try {
+          // Chrome-specific: Use fetch with credentials
+          const response = await fetch(permanentPdfUrl, {
+            method: 'GET',
+            credentials: 'omit', // Avoid CORS issues
+            cache: 'no-cache'
+          });
+          
+          if (response.ok) {
+            const blob = await response.blob();
+            
+            // Chrome-friendly download method
+            if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+              // IE/Edge fallback
+              window.navigator.msSaveOrOpenBlob(blob, `Purchase_Agreement_${document.getElementById('buyerName').value.replace(/\s+/g, '_')}_${dateStr.replace(/\//g, '-')}.pdf`);
+            } else {
+              // Modern browsers (Chrome-optimized)
+              const url = window.URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.style.display = 'none';
+              a.href = url;
+              a.download = `Purchase_Agreement_${document.getElementById('buyerName').value.replace(/\s+/g, '_')}_${dateStr.replace(/\//g, '-')}.pdf`;
+              
+              // Chrome requires the element to be in DOM
+              document.body.appendChild(a);
+              a.click();
+              
+              // Cleanup
+              setTimeout(() => {
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+              }, 100);
             }
-        } else { // 'type'
-            typeOptionBtn.classList.add('active');
-            typeArea.classList.add('active');
-            signatureInput.focus(); // Focus input for typing
+            showStatus('PDF downloaded successfully!', 'success');
+          } else {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+          }
+        } catch (error) {
+          console.log('Direct download failed, trying popup method:', error);
+          
+          // Fallback: Create a user-initiated popup
+          const popupFeatures = 'width=800,height=600,scrollbars=yes,resizable=yes';
+          const popup = window.open('', '_blank', popupFeatures);
+          
+          if (popup) {
+            popup.location.href = permanentPdfUrl;
+            showStatus('PDF opened in popup (allow popups if blocked)...', 'info');
+          } else {
+            // Last resort: try direct navigation
+            window.location.href = permanentPdfUrl;
+            showStatus('Downloading PDF... (check your downloads folder)', 'info');
+          }
         }
-        updateModalSignaturePreview(); // Update preview after tab change
-    }
+      } else if (generatedPDF) {
+        // Fallback to local PDF
+        const buyerName = document.getElementById('buyerName').value.replace(/\s+/g, '_') || 'Unknown_Buyer';
+        const filename = `Purchase_Agreement_${buyerName}_${dateStr.replace(/\//g, '-')}.pdf`;
+        generatedPDF.save(filename);
+        showStatus('PDF downloaded locally!', 'success');
+      } else {
+        showStatus('No PDF available. Please submit the form first.', 'error');
+      }
+    });
 
-    /**
-     * Updates the signature preview in the modal based on current input.
-     */
-    function updateModalSignaturePreview() {
-        if (!modalSignaturePreview) return;
-
-        modalSignaturePreview.innerHTML = ''; // Clear existing preview
-
-        if (drawArea.classList.contains('active') && signaturePad && !signaturePad.isEmpty()) {
-            const dataURL = signaturePad.toDataURL();
-            const img = document.createElement('img');
-            img.src = dataURL;
-            img.classList.add('drawn-signature'); // Add class for styling
-            modalSignaturePreview.appendChild(img);
-        } else if (typeArea.classList.contains('active') && signatureInput.value.trim() !== '') {
-            const span = document.createElement('span');
-            span.textContent = signatureInput.value.trim();
-            span.classList.add('typed-signature'); // Add class for styling
-            modalSignaturePreview.appendChild(span);
-        } else {
-            // Add a default placeholder if nothing is entered
-            const p = document.createElement('p');
-            p.textContent = drawArea.classList.contains('active') ? 'Draw your signature above' : 'Type your signature above';
-            modalSignaturePreview.appendChild(p);
+    // Print PDF with Chrome-specific fixes
+    printBtn.addEventListener('click', async () => {
+      if (permanentPdfUrl) {
+        try {
+          // Chrome-specific: Use fetch with proper headers
+          const response = await fetch(permanentPdfUrl, {
+            method: 'GET',
+            credentials: 'omit',
+            cache: 'no-cache'
+          });
+          
+          if (response.ok) {
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            
+            // Chrome-optimized print method
+            const printWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
+            
+            if (printWindow) {
+              printWindow.document.write(`
+                <html>
+                  <head>
+                    <title>Purchase Agreement</title>
+                    <style>
+                      body { margin: 0; padding: 0; }
+                      iframe { width: 100%; height: 100vh; border: none; }
+                    </style>
+                  </head>
+                  <body>
+                    <iframe src="${url}" onload="setTimeout(() => { window.print(); }, 1000);"></iframe>
+                  </body>
+                </html>
+              `);
+              printWindow.document.close();
+              
+              // Cleanup after print
+              setTimeout(() => {
+                window.URL.revokeObjectURL(url);
+              }, 5000);
+            } else {
+              throw new Error('Popup blocked');
+            }
+          } else {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+          }
+        } catch (error) {
+          console.log('Direct print failed, trying popup method:', error);
+          
+          // Fallback: Simple popup for Chrome
+          const popupFeatures = 'width=1000,height=700,scrollbars=yes,resizable=yes,toolbar=yes';
+          const popup = window.open(permanentPdfUrl, '_blank', popupFeatures);
+          
+          if (popup) {
+            showStatus('PDF opened in new window for printing (use Ctrl+P to print)...', 'info');
+          } else {
+            showStatus('Popup blocked! Please disable popup blocker and try again.', 'error');
+          }
         }
-    }
-
-    /**
-     * Saves the signature data to the appropriate form fields and closes the modal.
-     */
-    function saveSignature() {
-        if (!currentSignatureTargetId) return;
-
-        // Get the relevant elements for the current buyer/cobuyer
-        const signatureDisplayDiv = document.getElementById(`${currentSignatureTargetId}_signature_display`);
-        const hiddenSignatureDataInput = document.getElementById(`${currentSignatureTargetId}_signature_data`);
-        const signatureDateInput = document.getElementById(`${currentSignatureTargetId}_signature_date`);
-        const signatureErrorSpan = document.getElementById(`${currentSignatureTargetId}_signature_line-error`);
-        const signatureBox = document.getElementById(`${currentSignatureTargetId}_signature_line`);
-
-        signatureDisplayDiv.innerHTML = ''; // Clear previous content in the main form
-
-        let signatureData = '';
-        let signatureType = '';
-        let isSignatureValid = false;
-
-        if (drawArea.classList.contains('active') && signaturePad && !signaturePad.isEmpty()) {
-            // Save drawn signature
-            signatureData = signaturePad.toDataURL('image/png');
-            signatureType = 'drawn';
-            const img = document.createElement('img');
-            img.src = signatureData;
-            img.classList.add('drawn-signature');
-            signatureDisplayDiv.appendChild(img);
-            isSignatureValid = true;
-        } else if (typeArea.classList.contains('active') && signatureInput.value.trim() !== '') {
-            // Save typed signature
-            signatureData = signatureInput.value.trim();
-            signatureType = 'typed';
-            const span = document.createElement('span');
-            span.textContent = signatureData;
-            span.classList.add('typed-signature'); // Apply signature font if defined in CSS
-            signatureDisplayDiv.appendChild(span);
-            isSignatureValid = true;
+      } else if (generatedPDF) {
+        // Fallback to local PDF
+        const pdfBlob = generatedPDF.output('blob');
+        const pdfUrl = URL.createObjectURL(pdfBlob);
+        const printWindow = window.open(pdfUrl);
+        if (printWindow) {
+          printWindow.onload = () => {
+            printWindow.print();
+          };
         }
+      } else {
+        showStatus('No PDF available for printing.', 'error');
+      }
+    });
 
-        if (isSignatureValid) {
-            // Store data in the hidden input
-            if (hiddenSignatureDataInput) {
-                hiddenSignatureDataInput.value = signatureData;
-                hiddenSignatureDataInput.setAttribute('data-signature-type', signatureType);
-            }
-
-            // Set the current date
-            const today = new Date();
-            const dd = String(today.getDate()).padStart(2, '0');
-            const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-            const yyyy = today.getFullYear();
-            if (signatureDateInput) {
-                signatureDateInput.value = `${mm}/${dd}/${yyyy}`;
-            }
-
-            // Update main signature box appearance for validation/styling
-            if (signatureBox) {
-                signatureBox.classList.add('has-signature');
-                signatureBox.classList.remove('has-error');
-            }
-            if (signatureErrorSpan) {
-                signatureErrorSpan.classList.remove('show'); // Hide error message
-                signatureErrorSpan.textContent = '';
-            }
-
-            closeModal(); // Close the modal after saving
-        } else {
-            // If no valid signature, show error on the main form
-            if (signatureErrorSpan) {
-                signatureErrorSpan.textContent = 'Signature is required.';
-                signatureErrorSpan.classList.add('show');
-            }
-            if (signatureBox) {
-                signatureBox.classList.add('has-error');
-            }
-        }
-    }
-});
-
-    </script>
+    // Focus management
+    document.querySelectorAll('.field-input').forEach(input => {
+      input.addEventListener('focus', function() {
+        this.style.background = 'rgba(255, 255, 240, 0.5)';
+      });
+      
+      input.addEventListener('blur', function() {
+        this.style.background = 'transparent';
+      });
+    });
+  </script>
 </body>
 </html>

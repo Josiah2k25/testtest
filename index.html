@@ -3,61 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Individual Application Form for Rio Tierra Real Estate developments. Apply to purchase premium residential lots in our exclusive communities.">
-  <meta name="keywords" content="individual application, Rio Tierra, residential lots, real estate, Florida Estates, Lunar Estates">
+  <title>Individual Application - Florida Estates Phase 2 | Rio Tierra Real Estate</title>
+  <meta name="description" content="Apply for premium residential lots in Florida Estates Phase 2. Fast, secure application process with digital signatures.">
+  <meta name="keywords" content="Florida Estates, residential lots, real estate application, Rio Tierra">
   <meta name="author" content="Rio Tierra Real Estate">
-  <meta property="og:title" content="Rio Tierra | Individual Application Form">
-  <meta property="og:description" content="Apply to purchase premium residential lots in Rio Tierra Real Estate's exclusive developments.">
+  
+  <meta property="og:title" content="Individual Application - Florida Estates Phase 2">
+  <meta property="og:description" content="Apply for premium residential lots in Florida Estates Phase 2">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/Rio Tierra Logo.webp">
-  <title>Rio Tierra | Individual Application Form</title>
   
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preload" href="/Rio Tierra Logo.webp" as="image">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="/footer.css">
-  
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   
   <style>
     :root {
       --primary: #c1743c;
       --primary-dark: #a85e2d;
-      --primary-light: #d4896b;
-      --secondary: #2d4a8a;
       --text-dark: #1a1a1a;
       --text-medium: #4a4a4a;
       --text-light: #6b7280;
       --border-color: #e5e7eb;
-      --border-light: #f3f4f6;
       --bg-light: #fafafa;
       --bg-white: #ffffff;
       --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
       --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.12);
-      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition: all 0.25s ease;
       --border-radius: 8px;
-      --border-radius-lg: 12px;
     }
 
-    *, *::before, *::after {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       color: var(--text-dark);
-      background-color: var(--bg-white);
+      background: var(--bg-white);
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     .sr-only {
@@ -75,10 +62,10 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 1.5rem;
     }
 
-    .navbar {
+    .header {
       position: fixed;
       top: 0;
       left: 0;
@@ -86,153 +73,65 @@
       z-index: 1000;
       background: rgba(245, 241, 235, 0.95);
       border-bottom: 1px solid var(--border-color);
-      padding: 0;
-      box-shadow: var(--shadow-sm);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      transition: var(--transition);
+      padding: 1rem 0;
     }
 
-    .navbar-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 18px 40px;
+    .header-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: transparent;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
-    .navbar-brand {
+    .logo-link {
       text-decoration: none;
-      display: flex;
-      align-items: center;
       transition: var(--transition);
     }
 
-    .navbar-brand:hover {
+    .logo-link:hover {
       transform: translateY(-1px);
     }
 
-    .navbar-logo {
+    .logo {
       height: 45px;
       width: auto;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     }
 
-    .navbar-links {
+    .nav-links {
       display: flex;
       list-style: none;
-      gap: 48px;
+      gap: 2rem;
       margin: 0;
-      padding: 0;
-      align-items: center;
     }
 
-    .navbar-links a {
+    .nav-links a {
       text-decoration: none;
       color: var(--text-medium);
       font-weight: 500;
-      font-size: 15px;
+      padding: 0.75rem 0;
       transition: var(--transition);
-      position: relative;
-      padding: 12px 0;
-      letter-spacing: 0.01em;
     }
 
-    .navbar-links a:hover {
+    .nav-links a:hover,
+    .nav-links a:focus {
       color: var(--text-dark);
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
-    .navbar-links a.active {
+    .nav-links .active {
       color: var(--text-dark);
       font-weight: 600;
-      position: relative;
+      border-bottom: 2px solid var(--primary);
     }
 
-    .navbar-links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0px;
-      left: 0;
-      right: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      border-radius: 1px;
-    }
-
-    .navbar-right {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .navbar-cta {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #ffffff;
-      padding: 12px 28px;
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-      box-shadow: var(--shadow-sm);
-      letter-spacing: 0.01em;
-    }
-
-    .navbar-cta:hover {
-      background: linear-gradient(135deg, var(--primary-dark), #955129);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-      color: #ffffff;
-    }
-
-    .navbar-cta:active {
-      transform: translateY(0);
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      flex-direction: column;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      border-radius: 8px;
-      transition: all 0.25s ease;
-    }
-
-    .mobile-menu-btn:hover {
-      background: rgba(0, 0, 0, 0.05);
-    }
-
-    .mobile-menu-btn span {
-      width: 24px;
-      height: 2px;
-      background: #1a1a1a;
-      margin: 3px 0;
-      transition: all 0.25s ease;
-      border-radius: 1px;
-    }
-
-    .mobile-menu-btn.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .mobile-menu-btn.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .mobile-menu-btn.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    .form-section {
-      padding: 120px 0 100px;
-      min-height: calc(100vh - 200px);
+    .main-content {
+      margin-top: 80px;
+      padding: 2rem 0;
+      min-height: calc(100vh - 80px);
       background: linear-gradient(135deg, var(--bg-light) 0%, #f8f9fa 100%);
     }
 
@@ -240,335 +139,317 @@
       max-width: 1000px;
       margin: 0 auto;
       background: var(--bg-white);
-      border-radius: var(--border-radius-lg);
+      border-radius: var(--border-radius);
       box-shadow: var(--shadow-lg);
-      padding: 50px;
-      width: 100%;
-      border: 1px solid var(--border-light);
+      padding: 3rem;
+      border: 1px solid var(--border-color);
     }
 
     .form-header {
       text-align: center;
-      margin-bottom: 40px;
-      padding-bottom: 30px;
-      border-bottom: 2px solid var(--border-light);
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--border-color);
     }
 
-    .form-header h1 {
-      font-size: 2.75rem;
+    .form-title {
+      font-size: 2.5rem;
       color: var(--primary);
-      margin-bottom: 20px;
+      margin-bottom: 1rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
       line-height: 1.2;
     }
 
-    /* Document Form Styles */
-    @page {
-      size: letter;
-      margin: 0;
-    }
-
-    .page-container {
-      width: 100%;
+    .document-container {
       background: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      position: relative;
       padding: 0.75in;
-      margin: 0 auto;
       font-family: 'Times New Roman', Times, serif;
       color: #000;
-      line-height: 1.3;
+      line-height: 1.4;
       font-size: 12pt;
-    }
-
-    .header-section {
-      text-align: center;
-      margin-bottom: 0.35in;
-      position: relative;
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--border-radius);
     }
 
     .form-number {
-      position: absolute;
-      top: -0.5in;
-      right: 0;
+      text-align: right;
       font-size: 9pt;
       color: #666;
-      font-family: Arial, sans-serif;
+      margin-bottom: 1rem;
     }
 
-    .main-title {
+    .document-title {
+      text-align: center;
       font-size: 16pt;
       font-weight: bold;
       text-decoration: underline;
-      letter-spacing: 0.5pt;
-      margin-bottom: 0.25in;
+      margin-bottom: 1.5rem;
     }
 
-    .info-line {
-      margin-bottom: 0.15in;
-      display: flex;
-      align-items: baseline;
-      line-height: 1.8;
+    .form-section {
+      margin-bottom: 1.5rem;
     }
 
-    .label {
+    .section-label {
       font-weight: bold;
-      margin-right: 0.1in;
+      margin-bottom: 0.5rem;
+      display: block;
+      color: var(--text-dark);
     }
 
-    .field-input {
+    .form-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      min-width: 120px;
+      flex: 1;
+    }
+
+    .form-label {
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+      color: var(--text-dark);
+      font-size: 14px;
+    }
+
+    .form-input {
       border: none;
-      border-bottom: 1px solid #000;
+      border-bottom: 2px solid #333;
       background: transparent;
       font-family: 'Times New Roman', Times, serif;
       font-size: 12pt;
-      padding: 0 2px;
-      margin: 0 0.05in;
+      padding: 0.25rem 0.125rem;
       outline: none;
-      display: inline-block;
-      vertical-align: baseline;
+      transition: var(--transition);
+      min-height: 44px;
     }
 
-    .field-input:focus {
-      background: rgba(255, 255, 240, 0.5);
+    .form-input:focus {
+      background: rgba(193, 116, 60, 0.1);
+      border-bottom-color: var(--primary);
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
-    .field-xs { width: 0.5in; }
-    .field-s { width: 0.9in; }
-    .field-m { width: 1.5in; }
-    .field-l { width: 2.2in; }
-    .field-xl { width: 3in; }
-    .field-auto { min-width: 0.8in; flex: 1; }
+    .form-input:invalid {
+      border-bottom-color: #dc2626;
+    }
 
     .buyer-table {
       width: 100%;
       border-collapse: collapse;
-      border: 1.5pt solid #000;
-      margin: 0.25in 0;
-      table-layout: fixed;
+      border: 2px solid #000;
+      margin: 1rem 0;
     }
 
-    .buyer-table td {
-      padding: 0.08in 0.1in;
-      vertical-align: top;
-      width: 50%;
-    }
-
-    .buyer-table .section-header {
+    .buyer-table th {
+      background: #f9f9f9;
       font-weight: bold;
       text-align: center;
-      text-decoration: underline;
-      padding: 0.12in 0;
+      padding: 0.75rem;
+      border: 1px solid #000;
       font-size: 13pt;
     }
 
-    .buyer-table .divider {
-      border-right: 1pt solid #000;
-    }
-
-    .info-row {
-      display: flex;
-      align-items: baseline;
-      margin-bottom: 0.12in;
-      flex-wrap: wrap;
-    }
-
-    .info-label {
-      font-weight: bold;
-      margin-right: 0.08in;
-      min-width: 0.55in;
-      flex-shrink: 0;
+    .buyer-table td {
+      padding: 1rem;
+      vertical-align: top;
+      border: 1px solid #000;
     }
 
     .financial-table {
       width: 100%;
       border-collapse: collapse;
-      border: 1.5pt solid #000;
-      margin: 0.2in 0;
+      border: 2px solid #000;
+      margin: 1rem 0;
     }
 
+    .financial-table th,
     .financial-table td {
-      border: 1pt solid #000;
-      padding: 0.08in 0.12in;
+      border: 1px solid #000;
+      padding: 0.75rem;
     }
 
-    .financial-table .label-cell {
-      font-weight: bold;
-      width: 40%;
+    .financial-table th {
       background: #f9f9f9;
+      font-weight: bold;
+      text-align: left;
     }
 
-    .legal-box {
-      border: 1.5pt solid #000;
-      padding: 0.15in 0.2in;
-      margin: 0.2in 0;
+    .legal-text {
+      border: 2px solid #000;
+      padding: 1rem;
+      margin: 1rem 0;
       font-size: 10pt;
-      text-align: justify;
-      line-height: 1.4;
-    }
-
-    .legal-box p {
-      margin-bottom: 0.1in;
-    }
-
-    .legal-box p:last-child {
-      margin-bottom: 0;
+      line-height: 1.5;
+      background: #fafafa;
     }
 
     .signature-section {
-      margin-top: 0.3in;
+      margin-top: 2rem;
     }
 
-    .signature-table {
-      width: 100%;
-      margin-top: 0.2in;
+    .signature-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
     }
 
-    .signature-table td {
-      padding: 0.05in 0.1in;
-      vertical-align: bottom;
-    }
-
-    .signature-line {
-      border-bottom: 1pt solid #000;
-      min-height: 0.35in;
-      display: inline-block;
-      vertical-align: bottom;
-      position: relative;
+    .signature-label {
+      font-weight: bold;
+      min-width: 80px;
     }
 
     .signature-box {
-      width: 2.5in;
-      height: 0.4in;
-      border-bottom: 1pt solid #000;
-      display: inline-block;
-      position: relative;
+      width: 250px;
+      height: 50px;
+      border: 2px solid #000;
+      background: #fff;
       cursor: pointer;
-      vertical-align: bottom;
+      position: relative;
+      transition: var(--transition);
+      min-height: 44px;
     }
 
-    .signature-box:hover {
-      background: rgba(240, 240, 255, 0.3);
+    .signature-box:hover,
+    .signature-box:focus {
+      background: rgba(193, 116, 60, 0.1);
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
     .signature-placeholder {
       position: absolute;
-      bottom: 0.05in;
-      left: 0.1in;
-      color: #888;
-      font-size: 9pt;
+      top: 50%;
+      left: 0.5rem;
+      transform: translateY(-50%);
+      color: #666;
       font-style: italic;
+      pointer-events: none;
     }
 
     .signature-display {
       position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
       bottom: 0;
-      left: 0.05in;
-      right: 0.05in;
-      height: 0.35in;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
+      padding: 0.5rem;
     }
 
     .typed-signature {
-      font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
-      font-size: 20pt;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 24px;
       color: #000080;
     }
 
     .drawn-signature {
-      max-height: 0.3in;
+      max-height: 100%;
       max-width: 100%;
     }
 
-    .footer-section {
-      margin-top: 0.4in;
-      padding-top: 0.15in;
-      border-top: 0.5pt solid #999;
-      font-size: 9pt;
-      line-height: 1.3;
-    }
-
-    .control-panel {
-      background: #f5f5f5;
-      border-top: 2px solid #333;
-      padding: 20px;
+    .controls {
+      background: #f8f9fa;
+      padding: 2rem;
       text-align: center;
-      margin-top: 20px;
+      margin-top: 2rem;
+      border-radius: var(--border-radius);
     }
 
     .btn {
-      background: #333;
+      background: var(--primary);
       color: white;
       border: none;
-      padding: 12px 30px;
-      font-size: 14px;
+      padding: 0.75rem 2rem;
+      font-size: 16px;
       cursor: pointer;
-      margin: 0 5px;
-      font-family: Arial, sans-serif;
-      border-radius: 6px;
+      margin: 0.5rem;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      min-height: 44px;
+      font-weight: 600;
     }
 
-    .btn:hover:not(:disabled) {
-      background: #555;
+    .btn:hover:not(:disabled),
+    .btn:focus {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
     .btn:disabled {
       background: #ccc;
       cursor: not-allowed;
+      transform: none;
     }
 
     .btn-secondary {
       background: white;
-      color: #333;
-      border: 2px solid #333;
+      color: var(--primary);
+      border: 2px solid var(--primary);
     }
 
-    .btn-secondary:hover {
-      background: #f0f0f0;
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+      background: var(--primary);
+      color: white;
     }
 
-    .status-msg {
-      margin: 15px 0;
-      padding: 10px;
+    .status-message {
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: var(--border-radius);
       display: none;
-      border-radius: 4px;
     }
 
-    .status-msg.show {
+    .status-message.show {
       display: block;
     }
 
-    .status-msg.success {
-      background: #d4edda;
-      color: #155724;
+    .status-message.success {
+      background: #d4f7d4;
+      color: #0f5132;
+      border: 1px solid #198754;
     }
 
-    .status-msg.error {
-      background: #f8d7da;
+    .status-message.error {
+      background: #fde2e1;
       color: #721c24;
+      border: 1px solid #dc3545;
     }
 
-    .status-msg.info {
-      background: #d1ecf1;
-      color: #0c5460;
+    .status-message.info {
+      background: #cff4fc;
+      color: #055160;
+      border: 1px solid #0dcaf0;
     }
 
-    .loading-overlay {
+    .loading {
       display: none;
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0, 0, 0, 0.8);
       z-index: 9999;
       align-items: center;
       justify-content: center;
     }
 
-    .loading-overlay.active {
+    .loading.active {
       display: flex;
     }
 
@@ -576,7 +457,7 @@
       width: 50px;
       height: 50px;
       border: 3px solid #f3f3f3;
-      border-top: 3px solid #333;
+      border-top: 3px solid var(--primary);
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
@@ -594,7 +475,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0, 0, 0, 0.7);
       align-items: center;
       justify-content: center;
     }
@@ -605,181 +486,181 @@
 
     .modal-content {
       background: white;
-      padding: 30px;
-      border-radius: 5px;
+      padding: 2rem;
+      border-radius: var(--border-radius);
       width: 90%;
-      max-width: 450px;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
     }
 
     .modal-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 1.5rem;
     }
 
     .modal-title {
-      font-size: 18pt;
+      font-size: 1.5rem;
       font-weight: bold;
     }
 
     .close-btn {
       background: none;
       border: none;
-      font-size: 24pt;
+      font-size: 2rem;
       cursor: pointer;
-      padding: 0;
       color: #666;
+      min-height: 44px;
+      min-width: 44px;
     }
 
-    .close-btn:hover {
+    .close-btn:hover,
+    .close-btn:focus {
       color: #000;
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
     .tab-buttons {
       display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .tab-btn {
       flex: 1;
-      padding: 10px;
+      padding: 0.75rem;
       border: 1px solid #ccc;
       background: white;
       cursor: pointer;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      min-height: 44px;
     }
 
     .tab-btn.active {
-      background: #333;
+      background: var(--primary);
       color: white;
+      border-color: var(--primary);
+    }
+
+    .tab-btn:hover,
+    .tab-btn:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
     .tab-content {
       display: none;
+      min-height: 200px;
     }
 
     .tab-content.active {
       display: block;
     }
 
-    .type-input {
+    .signature-input {
       width: 100%;
-      padding: 15px;
-      border: 1px solid #ccc;
-      font-size: 24pt;
+      padding: 1rem;
+      border: 2px solid #ccc;
+      font-size: 24px;
       text-align: center;
       font-family: 'Brush Script MT', cursive;
       color: #000080;
+      border-radius: var(--border-radius);
+      min-height: 44px;
     }
 
-    .canvas-container {
-      border: 1px solid #ccc;
-      margin: 0 auto;
-      display: block;
+    .signature-input:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+      border-color: var(--primary);
     }
 
-    .form-footer {
-      margin-top: 40px;
-      text-align: center;
-      padding-top: 30px;
-      border-top: 2px solid var(--border-light);
+    .signature-canvas {
+      border: 2px solid #ccc;
+      background: white;
+      cursor: crosshair;
+      width: 100%;
+      height: 200px;
+      border-radius: var(--border-radius);
     }
 
-    .form-footer p {
-      color: var(--text-light);
-      font-size: 1rem;
-      font-weight: 400;
-    }
-
-    .form-footer a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .form-footer a:hover {
-      text-decoration: underline;
+    .signature-canvas:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
     @media (max-width: 768px) {
-      .navbar-container {
-        padding: 15px 30px;
-      }
-      
-      .navbar-links {
-        position: fixed;
-        top: 73px;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        padding: 30px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.25s ease;
-        gap: 25px;
-      }
-      
-      .navbar-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-      }
-      
-      .navbar-links a.active::after {
-        bottom: -8px;
-      }
-      
-      .mobile-menu-btn {
-        display: flex;
-      }
-      
-      .navbar-cta {
-        display: none;
+      .header-content {
+        padding: 0 1rem;
       }
 
-      .form-section {
-        padding: 100px 0 70px;
+      .nav-links {
+        gap: 1rem;
       }
-      
+
       .form-container {
-        padding: 35px 25px;
-        margin: 0 15px;
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
       }
-      
-      .form-header h1 {
-        font-size: 2.25rem;
+
+      .form-title {
+        font-size: 2rem;
+      }
+
+      .document-container {
+        padding: 0.5in;
+        transform: scale(0.9);
+        transform-origin: top left;
+        width: 111%;
+        margin-bottom: -10%;
+      }
+
+      .form-row {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .form-group {
+        min-width: unset;
+      }
+
+      .signature-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .signature-box {
+        width: 100%;
+      }
+
+      .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+      }
+
+      .tab-buttons {
+        flex-direction: column;
       }
     }
 
     @media (max-width: 480px) {
-      .navbar-container {
-        padding: 12px 20px;
-      }
-      
-      .navbar-logo {
-        height: 35px;
-      }
-      
-      .navbar-links {
-        top: 68px;
+      .document-container {
+        transform: scale(0.8);
+        width: 125%;
+        margin-bottom: -20%;
       }
 
-      .form-section {
-        padding: 85px 0 60px;
-      }
-      
       .form-container {
-        padding: 25px 20px;
-        margin: 0 10px;
+        padding: 1.5rem 1rem;
+        margin: 0 0.5rem;
       }
-      
-      .form-header h1 {
-        font-size: 2rem;
+
+      .form-title {
+        font-size: 1.75rem;
       }
     }
 
@@ -789,453 +670,327 @@
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
-      
-      html {
-        scroll-behavior: auto;
-      }
     }
 
     @media print {
-      body {
-        background: white;
-        margin: 0;
-      }
-
-      .navbar,
-      .control-panel,
-      .loading-overlay,
+      .header,
+      .controls,
+      .loading,
       .modal,
-      .form-header,
-      .form-footer {
+      .form-header {
         display: none !important;
       }
 
-      .page-container {
-        width: 100%;
-        min-height: 100vh;
-        margin: 0;
-        box-shadow: none;
-        padding: 0.75in;
+      .document-container {
+        transform: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        box-shadow: none !important;
         page-break-after: always;
       }
-
-      .field-input {
-        border-bottom: 1px solid #000 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      .buyer-table,
-      .financial-table,
-      .legal-box {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      .signature-box {
-        border-bottom: 1px solid #000 !important;
-      }
-    }
-
-    .field-input.error {
-      background: #ffe0e0;
-      border-bottom: 2px solid #d00;
     }
   </style>
 </head>
 <body>
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar-container">
-      <a href="/" class="navbar-brand" aria-label="Rio Tierra Home">
-        <img src="/Rio Tierra Logo.webp" 
-             alt="Rio Tierra Logo" 
-             class="navbar-logo" 
-             width="65" 
-             height="65">
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo-link" aria-label="Rio Tierra Home">
+        <img src="/Rio Tierra Logo.webp" alt="Rio Tierra Logo" class="logo" width="45" height="45">
       </a>
-      <div class="navbar-links" role="menubar">
-        <a href="/" role="menuitem">Home</a>
-        <a href="/sales/" role="menuitem">Sales</a>
-        <a href="#contact" class="active" role="menuitem" aria-current="page">Individual Application</a>
-      </div>
-      <div class="navbar-right">
-        <a href="#contact" class="navbar-cta">Get In Touch</a>
-        <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navbar-links">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/sales/">Sales</a></li>
+          <li><a href="#application" class="active" aria-current="page">Application</a></li>
+        </ul>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main>
-    <section class="form-section" id="individual-application" aria-labelledby="form-heading">
-      <div class="container">
-        <div class="form-container">
-          <header class="form-header">
-            <h1 id="form-heading">Individual Application Form</h1>
-          </header>
-          <div class="loading-overlay" id="loadingOverlay">
-        <div class="spinner"></div>
-    </div>
+  <main class="main-content">
+    <div class="container">
+      <div class="form-container">
+        <header class="form-header">
+          <h1 class="form-title" id="application">Individual Application Form</h1>
+        </header>
 
-    <div class="page-container" id="documentPage">
-        <div class="form-number">Form 2024-OFFER-001</div>
-        
-        <div class="header-section">
-            <h1 class="main-title">OFFER TO PURCHASE VACANT PROPERTY</h1>
+        <div class="loading" id="loading" aria-hidden="true">
+          <div class="spinner" aria-label="Loading"></div>
         </div>
 
-        <form id="purchaseForm" novalidate>
-            <div class="info-line">
-                <span class="label">Seller:</span>
-                <span>SNT RGV, LLC, P.O. Box 610, McAllen, Texas 78505</span>
+        <div class="document-container">
+          <div class="form-number">Form 2024-OFFER-001</div>
+          
+          <h2 class="document-title">OFFER TO PURCHASE VACANT PROPERTY</h2>
+
+          <form id="applicationForm" novalidate>
+            <div class="form-section">
+              <p><strong>Seller:</strong> SNT RGV, LLC, P.O. Box 610, McAllen, Texas 78505</p>
             </div>
 
-            <div class="info-line">
-                <span class="label">Lot#</span>
-                <input type="text" class="field-input field-xs" id="lot" name="lot" required>
-                
-                <span class="label" style="margin-left: 0.3in;">Block#</span>
-                <input type="text" class="field-input field-xs" id="block" name="block" required>
-                
-                <span class="label" style="margin-left: 0.3in;">Subdivision:</span>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="lot" class="form-label">Lot #</label>
+                <input type="text" id="lot" name="lot" class="form-input" required aria-describedby="lot-error">
+              </div>
+              <div class="form-group">
+                <label for="block" class="form-label">Block #</label>
+                <input type="text" id="block" name="block" class="form-input" required aria-describedby="block-error">
+              </div>
+              <div class="form-group">
+                <span class="form-label">Subdivision:</span>
                 <span>Florida Estates Subdivision Section II, Cameron County, TX</span>
+              </div>
             </div>
 
             <table class="buyer-table">
+              <thead>
                 <tr>
-                    <td class="section-header divider" colspan="2">Buyer</td>
-                    <td class="section-header" colspan="2">Co-Buyer</td>
+                  <th scope="col">Buyer Information</th>
+                  <th scope="col">Co-Buyer Information</th>
                 </tr>
+              </thead>
+              <tbody>
                 <tr>
-                    <td colspan="2" class="divider" style="padding: 0.15in;">
-                        <div class="info-row">
-                            <span class="info-label">Name:</span>
-                            <input type="text" class="field-input field-l" id="buyerName" name="buyerName" required>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">Email:</span>
-                            <input type="email" class="field-input field-l" id="buyerEmail" name="buyerEmail" required>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">Address:</span>
-                            <input type="text" class="field-input field-l" id="buyerAddress" name="buyerAddress" required>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">City:</span>
-                            <input type="text" class="field-input field-m" id="buyerCity" name="buyerCity" required>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">State:</span>
-                            <input type="text" class="field-input field-xs" id="buyerState" name="buyerState" maxlength="2" required>
-                            <span class="info-label" style="margin-left: 0.1in;">ZIP:</span>
-                            <input type="text" class="field-input field-s" id="buyerZip" name="buyerZip" required>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">Phone:</span>
-                            <input type="tel" class="field-input field-m" id="buyerPhone" name="buyerPhone" required>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">SSN:</span>
-                            <input type="text" class="field-input field-m" id="buyerSSN" name="buyerSSN" placeholder="000-00-0000" required>
-                        </div>
-                    </td>
-                    <td colspan="2" style="padding: 0.15in;">
-                        <div class="info-row">
-                            <span class="info-label">Name:</span>
-                            <input type="text" class="field-input field-l" id="cobuyerName" name="cobuyerName">
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">Email:</span>
-                            <input type="email" class="field-input field-l" id="cobuyerEmail" name="cobuyerEmail">
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">Address:</span>
-                            <input type="text" class="field-input field-l" id="cobuyerAddress" name="cobuyerAddress">
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">City:</span>
-                            <input type="text" class="field-input field-m" id="cobuyerCity" name="cobuyerCity">
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">State:</span>
-                            <input type="text" class="field-input field-xs" id="cobuyerState" name="cobuyerState" maxlength="2">
-                            <span class="info-label" style="margin-left: 0.1in;">ZIP:</span>
-                            <input type="text" class="field-input field-s" id="cobuyerZip" name="cobuyerZip">
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">Phone:</span>
-                            <input type="tel" class="field-input field-m" id="cobuyerPhone" name="cobuyerPhone">
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">SSN:</span>
-                            <input type="text" class="field-input field-m" id="cobuyerSSN" name="cobuyerSSN" placeholder="000-00-0000">
-                        </div>
-                    </td>
+                  <td>
+                    <div class="form-group">
+                      <label for="buyerName" class="form-label">Full Name</label>
+                      <input type="text" id="buyerName" name="buyerName" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="buyerEmail" class="form-label">Email Address</label>
+                      <input type="email" id="buyerEmail" name="buyerEmail" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="buyerAddress" class="form-label">Street Address</label>
+                      <input type="text" id="buyerAddress" name="buyerAddress" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="buyerCity" class="form-label">City</label>
+                      <input type="text" id="buyerCity" name="buyerCity" class="form-input" required>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="buyerState" class="form-label">State</label>
+                        <input type="text" id="buyerState" name="buyerState" class="form-input" maxlength="2" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="buyerZip" class="form-label">ZIP Code</label>
+                        <input type="text" id="buyerZip" name="buyerZip" class="form-input" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="buyerPhone" class="form-label">Phone Number</label>
+                      <input type="tel" id="buyerPhone" name="buyerPhone" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="buyerSSN" class="form-label">SSN</label>
+                      <input type="text" id="buyerSSN" name="buyerSSN" class="form-input" placeholder="000-00-0000" required>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-group">
+                      <label for="cobuyerName" class="form-label">Full Name</label>
+                      <input type="text" id="cobuyerName" name="cobuyerName" class="form-input">
+                    </div>
+                    <div class="form-group">
+                      <label for="cobuyerEmail" class="form-label">Email Address</label>
+                      <input type="email" id="cobuyerEmail" name="cobuyerEmail" class="form-input">
+                    </div>
+                    <div class="form-group">
+                      <label for="cobuyerAddress" class="form-label">Street Address</label>
+                      <input type="text" id="cobuyerAddress" name="cobuyerAddress" class="form-input">
+                    </div>
+                    <div class="form-group">
+                      <label for="cobuyerCity" class="form-label">City</label>
+                      <input type="text" id="cobuyerCity" name="cobuyerCity" class="form-input">
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="cobuyerState" class="form-label">State</label>
+                        <input type="text" id="cobuyerState" name="cobuyerState" class="form-input" maxlength="2">
+                      </div>
+                      <div class="form-group">
+                        <label for="cobuyerZip" class="form-label">ZIP Code</label>
+                        <input type="text" id="cobuyerZip" name="cobuyerZip" class="form-input">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="cobuyerPhone" class="form-label">Phone Number</label>
+                      <input type="tel" id="cobuyerPhone" name="cobuyerPhone" class="form-input">
+                    </div>
+                    <div class="form-group">
+                      <label for="cobuyerSSN" class="form-label">SSN</label>
+                      <input type="text" id="cobuyerSSN" name="cobuyerSSN" class="form-input" placeholder="000-00-0000">
+                    </div>
+                  </td>
                 </tr>
+              </tbody>
             </table>
 
             <table class="financial-table">
+              <thead>
                 <tr>
-                    <td class="label-cell">Purchase Price:</td>
-                    <td>$ <input type="number" class="field-input field-m" id="purchasePrice" name="purchasePrice" step="0.01" required></td>
+                  <th scope="col">Financial Information</th>
+                  <th scope="col">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Purchase Price:</th>
+                  <td>
+                    <label for="purchasePrice" class="sr-only">Purchase Price</label>
+                    $ <input type="number" id="purchasePrice" name="purchasePrice" class="form-input" step="0.01" required>
+                  </td>
                 </tr>
                 <tr>
-                    <td class="label-cell">Down Payment:</td>
-                    <td>$ <input type="number" class="field-input field-m" id="downPayment" name="downPayment" step="0.01" required></td>
+                  <th scope="row">Down Payment:</th>
+                  <td>
+                    <label for="downPayment" class="sr-only">Down Payment</label>
+                    $ <input type="number" id="downPayment" name="downPayment" class="form-input" step="0.01" required>
+                  </td>
                 </tr>
                 <tr>
-                    <td class="label-cell">Amount to Finance:</td>
-                    <td>$ <input type="number" class="field-input field-m" id="loanAmount" name="loanAmount" readonly></td>
+                  <th scope="row">Amount to Finance:</th>
+                  <td>
+                    <label for="loanAmount" class="sr-only">Amount to Finance</label>
+                    $ <input type="number" id="loanAmount" name="loanAmount" class="form-input" readonly>
+                  </td>
                 </tr>
                 <tr>
-                    <td class="label-cell">Interest Rate:</td>
-                    <td><strong>10.00%</strong> per annum</td>
+                  <th scope="row">Interest Rate:</th>
+                  <td><strong>10.00%</strong> per annum</td>
                 </tr>
                 <tr>
-                    <td class="label-cell">Term of Loan:</td>
-                    <td>
-                        <input type="number" class="field-input field-xs" id="termMonths" name="termMonths" required> months
-                        (<input type="number" class="field-input field-xs" id="termYears" name="termYears"> years)
-                    </td>
+                  <th scope="row">Term of Loan:</th>
+                  <td>
+                    <label for="termMonths" class="sr-only">Loan Term in Months</label>
+                    <input type="number" id="termMonths" name="termMonths" class="form-input" required> months
+                  </td>
                 </tr>
+              </tbody>
             </table>
 
-            <div class="legal-box">
-                <p>An Owner's Title Insurance Policy is not provided in this sale. Buyer may obtain a Title Insurance Policy at Buyer's expense from a title company of Buyer's choice.</p>
-                
-                <p>Buyer is offering to purchase the property described herein "AS IS" in its present condition. The Property is subject to certain restrictions which Buyer acknowledges having received a copy of.</p>
-                
-                <p>The documents signed at the closing of the sale and purchase will contain the entire agreement. Any promise or representation by any salesperson or employee of the Seller in writing or orally that is different than the documents signed at the closing is void. Any dispute between Seller and Buyer related to this agreement which is not resolved through informal discussion will be referred to a mutually acceptable mediation service or provider. The parties to the mediation shall bear the mediation cost equally.</p>
-                
-                <p>Notice Regarding Possible Annexation: If the property that is the subject of this Contract is located outside the limits of a municipality, the property may now or later be included in the extraterritorial jurisdiction of a municipality and may now or later be subject to annexation by the municipality.</p>
+            <div class="legal-text">
+              <p>An Owner's Title Insurance Policy is not provided in this sale. Buyer may obtain a Title Insurance Policy at Buyer's expense from a title company of Buyer's choice.</p>
+              
+              <p>Buyer is offering to purchase the property described herein "AS IS" in its present condition. The Property is subject to certain restrictions which Buyer acknowledges having received a copy of.</p>
+              
+              <p>The documents signed at the closing of the sale and purchase will contain the entire agreement. Any promise or representation by any salesperson or employee of the Seller in writing or orally that is different than the documents signed at the closing is void.</p>
+              
+              <p>Notice Regarding Possible Annexation: If the property that is the subject of this Contract is located outside the limits of a municipality, the property may now or later be included in the extraterritorial jurisdiction of a municipality.</p>
             </div>
 
             <div class="signature-section">
-                <table class="signature-table">
-                    <tr>
-                        <td style="width: 10%;">Buyer:</td>
-                        <td style="width: 35%;">
-                            <div class="signature-box" id="buyerSignatureBox" tabindex="0">
-                                <span class="signature-placeholder">Click here to sign</span>
-                                <div class="signature-display" id="buyerSignatureDisplay"></div>
-                            </div>
-                        </td>
-                        <td style="width: 10%; text-align: right;">Date:</td>
-                        <td style="width: 20%;">
-                            <span class="signature-line" style="width: 100%;" id="buyerDate"></span>
-                        </td>
-                        <td style="width: 25%; text-align: center;">
-                            <span style="font-size: 9pt;">(Office use only)</span>
-                        </td>
-                    </tr>
-                    <tr style="height: 0.15in;"></tr>
-                    <tr>
-                        <td>Co-Buyer:</td>
-                        <td>
-                            <div class="signature-box" id="cobuyerSignatureBox" tabindex="0">
-                                <span class="signature-placeholder">Click here to sign</span>
-                                <div class="signature-display" id="cobuyerSignatureDisplay"></div>
-                            </div>
-                        </td>
-                        <td style="text-align: right;">Date:</td>
-                        <td>
-                            <span class="signature-line" style="width: 100%;" id="cobuyerDate"></span>
-                        </td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="footer-section">
-                <p>Offer to Purchase Vacant Property - Rio Tierra</p>
-                <p style="margin-top: 0.05in;">1600 Wildcat Dr, Portland, Texas 78374 | NMLS #2263990</p>
+              <h3>Signatures</h3>
+              <div class="signature-row">
+                <span class="signature-label">Buyer:</span>
+                <button type="button" class="signature-box" id="buyerSignature" aria-label="Click to add buyer signature">
+                  <span class="signature-placeholder">Click to sign</span>
+                  <div class="signature-display" id="buyerSignatureDisplay"></div>
+                </button>
+                <span class="signature-label">Date:</span>
+                <span id="buyerDate"></span>
+              </div>
+              
+              <div class="signature-row">
+                <span class="signature-label">Co-Buyer:</span>
+                <button type="button" class="signature-box" id="cobuyerSignature" aria-label="Click to add co-buyer signature">
+                  <span class="signature-placeholder">Click to sign</span>
+                  <div class="signature-display" id="cobuyerSignatureDisplay"></div>
+                </button>
+                <span class="signature-label">Date:</span>
+                <span id="cobuyerDate"></span>
+              </div>
             </div>
 
             <input type="hidden" id="buyerSignatureData" name="buyerSignatureData">
             <input type="hidden" id="cobuyerSignatureData" name="cobuyerSignatureData">
-        </form>
-    </div>
+          </form>
+        </div>
 
-    <div class="control-panel">
-        <div id="statusMsg" class="status-msg"></div>
-        <button type="button" class="btn" id="submitBtn">Submit Application</button>
-        <div id="successBtns" style="display: none; margin-top: 15px;">
+        <div class="controls">
+          <div id="statusMessage" class="status-message" role="alert" aria-live="polite"></div>
+          <button type="button" class="btn" id="submitBtn">Submit Application</button>
+          <div id="successActions" style="display: none;">
             <button type="button" class="btn btn-secondary" id="downloadBtn">Download PDF</button>
             <button type="button" class="btn btn-secondary" id="printBtn">Print Document</button>
-        </div>
-    </div>
-
-    <!-- Signature Modal -->
-    <div id="signatureModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Add Signature</h2>
-                <button class="close-btn" id="closeModal">&times;</button>
-            </div>
-            
-            <div class="tab-buttons">
-                <button class="tab-btn active" id="typeTab">Type</button>
-                <button class="tab-btn" id="drawTab">Draw</button>
-            </div>
-            
-            <div id="typeContent" class="tab-content active">
-                <input type="text" class="type-input" id="signatureTypeInput" placeholder="Type your signature">
-            </div>
-            
-            <div id="drawContent" class="tab-content">
-                <canvas id="signatureCanvas" class="canvas-container" width="400" height="150"></canvas>
-            </div>
-            
-            <div style="margin-top: 20px; text-align: right;">
-                <button class="btn btn-secondary" id="clearBtn" style="margin-right: 10px;">Clear</button>
-                <button class="btn" id="saveBtn">Save</button>
-            </div>
-        </div>
-    </div>
-
-          <footer class="form-footer">
-            <p>Need assistance? <a href="#contact">Contact our team</a> for help with your application.</p>
-          </footer>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <script>
-    // UPDATED BACKEND URL - Your actual Render URL
-    const BACKEND_URL = 'https://holand-pdf-storage.onrender.com';
-
-    // Initialize EmailJS
-    emailjs.init('YvkwnfiMmHhEc2zjh');
-
-    // Mobile menu functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-      const navbarLinks = document.querySelector('.navbar-links');
+  <div id="signatureModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle" class="modal-title">Add Signature</h3>
+        <button class="close-btn" id="closeModal" aria-label="Close signature modal">&times;</button>
+      </div>
       
-      if (mobileMenuBtn && navbarLinks) {
-        mobileMenuBtn.addEventListener('click', function() {
-          const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-          
-          mobileMenuBtn.classList.toggle('active');
-          navbarLinks.classList.toggle('active');
-          
-          mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
-        });
-        
-        document.addEventListener('click', function(e) {
-          if (!mobileMenuBtn.contains(e.target) && !navbarLinks.contains(e.target)) {
-            mobileMenuBtn.classList.remove('active');
-            navbarLinks.classList.remove('active');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-          }
-        });
-        
-        navbarLinks.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') {
-            mobileMenuBtn.classList.remove('active');
-            navbarLinks.classList.remove('active');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            mobileMenuBtn.focus();
-          }
-        });
-      }
+      <div class="tab-buttons" role="tablist">
+        <button class="tab-btn active" id="typeTab" role="tab" aria-selected="true" aria-controls="typeContent">Type Signature</button>
+        <button class="tab-btn" id="drawTab" role="tab" aria-selected="false" aria-controls="drawContent">Draw Signature</button>
+      </div>
+      
+      <div id="typeContent" class="tab-content active" role="tabpanel" aria-labelledby="typeTab">
+        <label for="signatureInput" class="sr-only">Type your signature</label>
+        <input type="text" class="signature-input" id="signatureInput" placeholder="Type your signature">
+      </div>
+      
+      <div id="drawContent" class="tab-content" role="tabpanel" aria-labelledby="drawTab">
+        <canvas id="signatureCanvas" class="signature-canvas" width="500" height="200" aria-label="Draw your signature here"></canvas>
+      </div>
+      
+      <div style="margin-top: 1.5rem; text-align: right;">
+        <button class="btn btn-secondary" id="clearBtn">Clear</button>
+        <button class="btn" id="saveBtn">Save Signature</button>
+      </div>
+    </div>
+  </div>
 
-      initializeCanvas();
-    });
-
-    // Form functionality
-    const form = document.getElementById('purchaseForm');
+  <script>
+    const BACKEND_URL = 'https://holand-pdf-storage.onrender.com';
+    const form = document.getElementById('applicationForm');
     const submitBtn = document.getElementById('submitBtn');
-    const downloadBtn = document.getElementById('downloadBtn');
-    const printBtn = document.getElementById('printBtn');
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    const statusMsg = document.getElementById('statusMsg');
-    const successBtns = document.getElementById('successBtns');
-
-    // Modal elements
+    const loading = document.getElementById('loading');
+    const statusMessage = document.getElementById('statusMessage');
     const modal = document.getElementById('signatureModal');
-    const closeModal = document.getElementById('closeModal');
-    const typeTab = document.getElementById('typeTab');
-    const drawTab = document.getElementById('drawTab');
-    const typeContent = document.getElementById('typeContent');
-    const drawContent = document.getElementById('drawContent');
-    const signatureTypeInput = document.getElementById('signatureTypeInput');
-    const signatureCanvas = document.getElementById('signatureCanvas');
-    const clearBtn = document.getElementById('clearBtn');
-    const saveBtn = document.getElementById('saveBtn');
-
-    // Signature boxes
-    const buyerSigBox = document.getElementById('buyerSignatureBox');
-    const cobuyerSigBox = document.getElementById('cobuyerSignatureBox');
-
-    // State variables
-    let currentSigTarget = null;
-    let ctx = null;
+    const canvas = document.getElementById('signatureCanvas');
+    let ctx = canvas.getContext('2d');
     let isDrawing = false;
+    let currentTarget = null;
     let generatedPDF = null;
-    let permanentPdfUrl = null;
 
     // Set today's date
-    const today = new Date();
-    const dateStr = `${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getDate().toString().padStart(2, '0')}/${today.getFullYear()}`;
-    document.getElementById('buyerDate').textContent = dateStr;
-    document.getElementById('cobuyerDate').textContent = dateStr;
+    const today = new Date().toLocaleDateString();
+    document.getElementById('buyerDate').textContent = today;
+    document.getElementById('cobuyerDate').textContent = today;
 
-    // FIXED: Canvas initialization
-    function initializeCanvas() {
-      if (signatureCanvas) {
-        signatureCanvas.width = signatureCanvas.offsetWidth;
-        signatureCanvas.height = signatureCanvas.offsetHeight;
-        
-        ctx = signatureCanvas.getContext('2d');
-        ctx.lineWidth = 2;
-        ctx.lineCap = 'round';
-        ctx.strokeStyle = '#000080';
-        
-        // Set white background
-        ctx.fillStyle = 'white';
-        ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
-        ctx.fillStyle = '#000080';
-      }
+    // Initialize canvas
+    function initCanvas() {
+      ctx.lineWidth = 3;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = '#000080';
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
 
-    // FIXED: Canvas drawing setup
-    function setupCanvasDrawing() {
-      if (!signatureCanvas || !ctx) return;
-
-      // Mouse events
-      signatureCanvas.addEventListener('mousedown', startDrawing);
-      signatureCanvas.addEventListener('mousemove', draw);
-      signatureCanvas.addEventListener('mouseup', stopDrawing);
-      signatureCanvas.addEventListener('mouseout', stopDrawing);
-
-      // Touch events
-      signatureCanvas.addEventListener('touchstart', handleTouch);
-      signatureCanvas.addEventListener('touchmove', handleTouch);
-      signatureCanvas.addEventListener('touchend', stopDrawing);
-    }
-
+    // Canvas drawing
     function startDrawing(e) {
       isDrawing = true;
-      const rect = signatureCanvas.getBoundingClientRect();
-      const x = (e.clientX - rect.left) * (signatureCanvas.width / rect.width);
-      const y = (e.clientY - rect.top) * (signatureCanvas.height / rect.height);
-      
+      const rect = canvas.getBoundingClientRect();
+      const x = (e.clientX - rect.left) * (canvas.width / rect.width);
+      const y = (e.clientY - rect.top) * (canvas.height / rect.height);
       ctx.beginPath();
       ctx.moveTo(x, y);
     }
 
     function draw(e) {
       if (!isDrawing) return;
-      
-      const rect = signatureCanvas.getBoundingClientRect();
-      const x = (e.clientX - rect.left) * (signatureCanvas.width / rect.width);
-      const y = (e.clientY - rect.top) * (signatureCanvas.height / rect.height);
-      
+      const rect = canvas.getBoundingClientRect();
+      const x = (e.clientX - rect.left) * (canvas.width / rect.width);
+      const y = (e.clientY - rect.top) * (canvas.height / rect.height);
       ctx.lineTo(x, y);
       ctx.stroke();
     }
@@ -1245,152 +1000,119 @@
       ctx.beginPath();
     }
 
+    // Touch events
     function handleTouch(e) {
       e.preventDefault();
       const touch = e.touches[0];
-      const mouseEvent = new MouseEvent(e.type === 'touchstart' ? 'mousedown' : 
-                                       e.type === 'touchmove' ? 'mousemove' : 'mouseup', {
+      const mouseEvent = new MouseEvent(e.type.replace('touch', 'mouse').replace('start', 'down').replace('end', 'up'), {
         clientX: touch.clientX,
         clientY: touch.clientY
       });
-      signatureCanvas.dispatchEvent(mouseEvent);
-    }
-
-    // Modal functions
-    function openModal(target) {
-      currentSigTarget = target;
-      modal.classList.add('active');
-      signatureTypeInput.value = '';
-      
-      setTimeout(() => {
-        initializeCanvas();
-        setupCanvasDrawing();
-        if (ctx) {
-          ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
-          ctx.fillStyle = 'white';
-          ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
-          ctx.fillStyle = '#000080';
-        }
-      }, 100);
-    }
-
-    function closeModalFn() {
-      modal.classList.remove('active');
-      currentSigTarget = null;
+      canvas.dispatchEvent(mouseEvent);
     }
 
     // Event listeners
-    closeModal.addEventListener('click', closeModalFn);
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModalFn();
-    });
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('touchstart', handleTouch);
+    canvas.addEventListener('touchmove', handleTouch);
+    canvas.addEventListener('touchend', stopDrawing);
+
+    // Modal functionality
+    function openModal(target) {
+      currentTarget = target;
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.getElementById('signatureInput').value = '';
+      initCanvas();
+      document.getElementById('signatureInput').focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      currentTarget = null;
+    }
 
     // Tab switching
-    typeTab.addEventListener('click', () => {
-      typeTab.classList.add('active');
-      drawTab.classList.remove('active');
-      typeContent.classList.add('active');
-      drawContent.classList.remove('active');
+    document.getElementById('typeTab').addEventListener('click', () => {
+      document.getElementById('typeTab').classList.add('active');
+      document.getElementById('drawTab').classList.remove('active');
+      document.getElementById('typeContent').classList.add('active');
+      document.getElementById('drawContent').classList.remove('active');
+      document.getElementById('typeTab').setAttribute('aria-selected', 'true');
+      document.getElementById('drawTab').setAttribute('aria-selected', 'false');
     });
 
-    drawTab.addEventListener('click', () => {
-      drawTab.classList.add('active');
-      typeTab.classList.remove('active');
-      drawContent.classList.add('active');
-      typeContent.classList.remove('active');
-      
-      setTimeout(() => {
-        initializeCanvas();
-        setupCanvasDrawing();
-      }, 50);
+    document.getElementById('drawTab').addEventListener('click', () => {
+      document.getElementById('drawTab').classList.add('active');
+      document.getElementById('typeTab').classList.remove('active');
+      document.getElementById('drawContent').classList.add('active');
+      document.getElementById('typeContent').classList.remove('active');
+      document.getElementById('drawTab').setAttribute('aria-selected', 'true');
+      document.getElementById('typeTab').setAttribute('aria-selected', 'false');
+      initCanvas();
     });
 
-    // Clear and save signature
-    clearBtn.addEventListener('click', () => {
-      if (typeContent.classList.contains('active')) {
-        signatureTypeInput.value = '';
+    // Signature boxes
+    document.getElementById('buyerSignature').addEventListener('click', () => openModal('buyer'));
+    document.getElementById('cobuyerSignature').addEventListener('click', () => openModal('cobuyer'));
+
+    // Modal controls
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', () => {
+      if (document.getElementById('typeContent').classList.contains('active')) {
+        document.getElementById('signatureInput').value = '';
       } else {
-        if (ctx) {
-          ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
-          ctx.fillStyle = 'white';
-          ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
-          ctx.fillStyle = '#000080';
-        }
+        initCanvas();
       }
     });
 
-    saveBtn.addEventListener('click', () => {
-      if (!currentSigTarget) return;
+    document.getElementById('saveBtn').addEventListener('click', () => {
+      if (!currentTarget) return;
       
-      const display = currentSigTarget.querySelector('.signature-display');
-      const placeholder = currentSigTarget.querySelector('.signature-placeholder');
-      const dataField = currentSigTarget.id.includes('buyer') ? 
-        document.getElementById('buyerSignatureData') : 
-        document.getElementById('cobuyerSignatureData');
+      const display = document.getElementById(currentTarget + 'SignatureDisplay');
+      const placeholder = document.getElementById(currentTarget + 'Signature').querySelector('.signature-placeholder');
+      const dataField = document.getElementById(currentTarget + 'SignatureData');
       
-      if (typeContent.classList.contains('active') && signatureTypeInput.value.trim()) {
-        display.innerHTML = `<span class="typed-signature">${signatureTypeInput.value}</span>`;
-        dataField.value = signatureTypeInput.value;
-        placeholder.style.display = 'none';
-      } else if (drawContent.classList.contains('active') && ctx) {
-        const imageData = signatureCanvas.toDataURL();
+      if (document.getElementById('typeContent').classList.contains('active')) {
+        const value = document.getElementById('signatureInput').value.trim();
+        if (value) {
+          display.innerHTML = `<span class="typed-signature">${value}</span>`;
+          dataField.value = value;
+          placeholder.style.display = 'none';
+        }
+      } else {
+        const imageData = canvas.toDataURL();
         const img = document.createElement('img');
         img.src = imageData;
         img.className = 'drawn-signature';
+        img.alt = 'Digital signature';
         display.innerHTML = '';
         display.appendChild(img);
         dataField.value = imageData;
         placeholder.style.display = 'none';
       }
       
-      closeModalFn();
+      closeModal();
     });
 
-    // Signature box handlers
-    buyerSigBox.addEventListener('click', () => openModal(buyerSigBox));
-    cobuyerSigBox.addEventListener('click', () => openModal(cobuyerSigBox));
-
-    buyerSigBox.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openModal(buyerSigBox);
-      }
-    });
-
-    cobuyerSigBox.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openModal(cobuyerSigBox);
-      }
-    });
-
-    // Financial calculations
-    const purchasePrice = document.getElementById('purchasePrice');
-    const downPayment = document.getElementById('downPayment');
-    const loanAmount = document.getElementById('loanAmount');
-    const termMonths = document.getElementById('termMonths');
-    const termYears = document.getElementById('termYears');
-
+    // Form calculations
     function calculateLoan() {
-      const price = parseFloat(purchasePrice.value) || 0;
-      const down = parseFloat(downPayment.value) || 0;
-      loanAmount.value = (price - down).toFixed(2);
+      const price = parseFloat(document.getElementById('purchasePrice').value) || 0;
+      const down = parseFloat(document.getElementById('downPayment').value) || 0;
+      document.getElementById('loanAmount').value = (price - down).toFixed(2);
     }
 
-    purchasePrice.addEventListener('input', calculateLoan);
-    downPayment.addEventListener('input', calculateLoan);
+    document.getElementById('purchasePrice').addEventListener('input', calculateLoan);
+    document.getElementById('downPayment').addEventListener('input', calculateLoan);
 
-    termMonths.addEventListener('input', function() {
-      const months = parseInt(this.value) || 0;
-      termYears.value = (months / 12).toFixed(1);
-    });
-
-    termYears.addEventListener('input', function() {
-      const years = parseFloat(this.value) || 0;
-      termMonths.value = Math.round(years * 12);
-    });
-
-    // Phone and SSN formatting
+    // Phone formatting
     document.querySelectorAll('input[type="tel"]').forEach(input => {
       input.addEventListener('input', function() {
         let value = this.value.replace(/\D/g, '');
@@ -1403,6 +1125,7 @@
       });
     });
 
+    // SSN formatting
     document.querySelectorAll('input[id*="SSN"]').forEach(input => {
       input.addEventListener('input', function() {
         let value = this.value.replace(/\D/g, '');
@@ -1415,33 +1138,20 @@
       });
     });
 
-    // Form validation
+    // Validation
     function validateForm() {
-      const required = [
-        'lot', 'block', 'buyerName', 'buyerEmail', 'buyerAddress',
-        'buyerCity', 'buyerState', 'buyerZip', 'buyerPhone', 'buyerSSN',
-        'purchasePrice', 'downPayment', 'termMonths'
-      ];
+      const required = ['lot', 'block', 'buyerName', 'buyerEmail', 'buyerAddress', 'buyerCity', 'buyerState', 'buyerZip', 'buyerPhone', 'buyerSSN', 'purchasePrice', 'downPayment', 'termMonths'];
       
       let valid = true;
-      
-      document.querySelectorAll('.field-input').forEach(input => {
-        input.classList.remove('error');
-      });
-      
       required.forEach(id => {
         const field = document.getElementById(id);
-        if (!field.value || field.value.trim() === '') {
-          field.classList.add('error');
+        if (!field.value.trim()) {
+          field.setCustomValidity('This field is required');
           valid = false;
+        } else {
+          field.setCustomValidity('');
         }
       });
-      
-      const email = document.getElementById('buyerEmail');
-      if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-        email.classList.add('error');
-        valid = false;
-      }
       
       if (!document.getElementById('buyerSignatureData').value) {
         showStatus('Please add your signature before submitting.', 'error');
@@ -1451,351 +1161,124 @@
       return valid;
     }
 
-    // Status message display
-    function showStatus(msg, type) {
-      statusMsg.textContent = msg;
-      statusMsg.className = `status-msg ${type} show`;
+    function showStatus(message, type) {
+      statusMessage.textContent = message;
+      statusMessage.className = `status-message ${type} show`;
     }
 
-    // PDF generation with optimized settings for better text quality
+    // Load external libraries on demand
+    async function loadLibraries() {
+      if (typeof html2canvas === 'undefined') {
+        await loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js');
+      }
+      if (typeof window.jspdf === 'undefined') {
+        await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
+      }
+      if (typeof emailjs === 'undefined') {
+        await loadScript('https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js');
+        emailjs.init('YvkwnfiMmHhEc2zjh');
+      }
+    }
+
+    function loadScript(src) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+
+    // PDF generation
     async function generatePDF() {
-      try {
-        const controlPanel = document.querySelector('.control-panel');
-        const formHeader = document.querySelector('.form-header');
-        const formFooter = document.querySelector('.form-footer');
-        
-        controlPanel.style.display = 'none';
-        formHeader.style.display = 'none';
-        formFooter.style.display = 'none';
-        
-        if (typeof html2canvas === 'undefined' || typeof window.jspdf === 'undefined') {
-          await new Promise(resolve => setTimeout(resolve, 1000));
-        }
-        
-        // FIXED: Better settings for text quality
-        const element = document.getElementById('documentPage');
-        
-        // Get the actual dimensions
-        const rect = element.getBoundingClientRect();
-        const actualWidth = rect.width;
-        const actualHeight = rect.height;
-        
-        const options = {
-          scale: 2, // Higher scale for better text quality
-          useCORS: true,
-          allowTaint: true,
-          backgroundColor: '#ffffff',
-          logging: false,
-          letterRendering: true,
-          width: actualWidth, // Use actual dimensions
-          height: actualHeight,
-          onclone: function(clonedDoc) {
-            // Ensure fonts are loaded in the cloned document
-            const clonedElement = clonedDoc.getElementById('documentPage');
-            if (clonedElement) {
-              clonedElement.style.fontFamily = '"Times New Roman", Times, serif';
-            }
-          }
-        };
-        
-        const canvas = await html2canvas(element, options);
-        
-        controlPanel.style.display = 'block';
-        formHeader.style.display = 'block';
-        formFooter.style.display = 'block';
-        
-        const { jsPDF } = window.jspdf;
-        
-        // Calculate proper dimensions to maintain aspect ratio
-        const imgWidth = canvas.width;
-        const imgHeight = canvas.height;
-        const ratio = imgHeight / imgWidth;
-        
-        // Standard letter size: 8.5" x 11"
-        const pdfWidth = 8.5;
-        const pdfHeight = 11;
-        
-        // Calculate scaled dimensions to fit within page while maintaining ratio
-        let scaledWidth = pdfWidth;
-        let scaledHeight = pdfWidth * ratio;
-        
-        if (scaledHeight > pdfHeight) {
-          scaledHeight = pdfHeight;
-          scaledWidth = pdfHeight / ratio;
-        }
-        
-        // Center the content on the page
-        const offsetX = (pdfWidth - scaledWidth) / 2;
-        const offsetY = (pdfHeight - scaledHeight) / 2;
-        
-        const pdf = new jsPDF({
-          orientation: 'portrait',
-          unit: 'in',
-          format: 'letter',
-          compress: true
-        });
-        
-        // FIXED: Use PNG for better text quality and proper scaling
-        const imgData = canvas.toDataURL('image/png');
-        pdf.addImage(imgData, 'PNG', offsetX, offsetY, scaledWidth, scaledHeight);
-        
-        return pdf;
-        
-      } catch (error) {
-        console.error('PDF generation error:', error);
-        throw error;
-      }
+      await loadLibraries();
+      
+      const element = document.querySelector('.document-container');
+      const canvas = await html2canvas(element, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#ffffff'
+      });
+      
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('portrait', 'mm', 'a4');
+      
+      const imgWidth = 210;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      
+      pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, imgWidth, imgHeight);
+      return pdf;
     }
 
-    // BACKEND INTEGRATION: Upload PDF to S3 with better error handling
-    async function uploadPDFToBackend(pdf) {
-      try {
-        showStatus('Saving PDF permanently...', 'info');
-        
-        // IMPROVED: Get PDF as blob first, then convert to base64
-        const pdfBlob = pdf.output('blob');
-        console.log(`PDF blob size: ${pdfBlob.size} bytes (${(pdfBlob.size / 1024 / 1024).toFixed(2)} MB)`);
-        
-        // Convert blob to base64
-        const base64Data = await new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result);
-          reader.onerror = reject;
-          reader.readAsDataURL(pdfBlob);
-        });
-        
-        const buyerName = document.getElementById('buyerName').value;
-        const originalName = `Purchase_Agreement_${buyerName.replace(/\s+/g, '_')}_${dateStr.replace(/\//g, '-')}.pdf`;
-        
-        console.log('Uploading to backend...');
-        const response = await fetch(`${BACKEND_URL}/upload-pdf-base64`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            pdfData: base64Data,
-            buyerName: buyerName,
-            originalName: originalName
-          })
-        });
-        
-        if (!response.ok) {
-          const errorData = await response.json().catch(() => ({}));
-          console.error('Upload failed:', errorData);
-          throw new Error(`Upload failed: ${response.status} - ${errorData.error || 'Unknown error'}`);
-        }
-        
-        const result = await response.json();
-        console.log('Upload successful:', result);
-        return result.url;
-        
-      } catch (error) {
-        console.error('Backend upload error:', error);
-        throw new Error(`Failed to save PDF permanently: ${error.message}`);
-      }
-    }
-
-    // MAIN FORM SUBMISSION
+    // Form submission
     submitBtn.addEventListener('click', async (e) => {
       e.preventDefault();
       
-      if (!validateForm()) return;
+      if (!validateForm()) {
+        form.reportValidity();
+        return;
+      }
       
-      loadingOverlay.classList.add('active');
+      loading.classList.add('active');
       submitBtn.disabled = true;
       
       try {
-        // Step 1: Generate PDF
         showStatus('Generating PDF...', 'info');
         generatedPDF = await generatePDF();
         
-        // Step 2: Upload to backend
-        permanentPdfUrl = await uploadPDFToBackend(generatedPDF);
+        showStatus('Uploading PDF...', 'info');
+        const pdfBlob = generatedPDF.output('blob');
+        const formData = new FormData();
+        formData.append('pdf', pdfBlob, 'application.pdf');
+        formData.append('buyerName', document.getElementById('buyerName').value);
         
-        // Step 3: Send email with PDF link
+        const response = await fetch(`${BACKEND_URL}/upload-pdf`, {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (!response.ok) throw new Error('Upload failed');
+        
+        const result = await response.json();
+        
         showStatus('Sending email...', 'info');
-        const emailData = {
+        await emailjs.send('service_vu3hz9m', 'template_t6sxp4j', {
           buyer_name: document.getElementById('buyerName').value,
           buyer_email: document.getElementById('buyerEmail').value,
           lot_number: document.getElementById('lot').value,
           block_number: document.getElementById('block').value,
           purchase_price: document.getElementById('purchasePrice').value,
-          submission_date: dateStr,
-          pdf_link: permanentPdfUrl
-        };
+          submission_date: today,
+          pdf_link: result.url
+        });
         
-        await emailjs.send('service_vu3hz9m', 'template_t6sxp4j', emailData);
-        
-        // Success!
-        loadingOverlay.classList.remove('active');
-        showStatus('Application submitted successfully! PDF saved permanently and email sent.', 'success');
-        
+        showStatus('Application submitted successfully!', 'success');
         submitBtn.style.display = 'none';
-        if (successBtns) {
-          successBtns.style.display = 'flex';
-          successBtns.style.justifyContent = 'center';
-          successBtns.style.gap = '10px';
-        }
+        document.getElementById('successActions').style.display = 'block';
         
       } catch (error) {
-        loadingOverlay.classList.remove('active');
-        submitBtn.disabled = false;
         showStatus(`Submission failed: ${error.message}`, 'error');
         console.error('Submission error:', error);
+      } finally {
+        loading.classList.remove('active');
+        submitBtn.disabled = false;
       }
     });
 
-    // Download PDF with Chrome-specific fixes
-    downloadBtn.addEventListener('click', async () => {
-      if (permanentPdfUrl) {
-        try {
-          // Chrome-specific: Use fetch with credentials
-          const response = await fetch(permanentPdfUrl, {
-            method: 'GET',
-            credentials: 'omit', // Avoid CORS issues
-            cache: 'no-cache'
-          });
-          
-          if (response.ok) {
-            const blob = await response.blob();
-            
-            // Chrome-friendly download method
-            if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-              // IE/Edge fallback
-              window.navigator.msSaveOrOpenBlob(blob, `Purchase_Agreement_${document.getElementById('buyerName').value.replace(/\s+/g, '_')}_${dateStr.replace(/\//g, '-')}.pdf`);
-            } else {
-              // Modern browsers (Chrome-optimized)
-              const url = window.URL.createObjectURL(blob);
-              const a = document.createElement('a');
-              a.style.display = 'none';
-              a.href = url;
-              a.download = `Purchase_Agreement_${document.getElementById('buyerName').value.replace(/\s+/g, '_')}_${dateStr.replace(/\//g, '-')}.pdf`;
-              
-              // Chrome requires the element to be in DOM
-              document.body.appendChild(a);
-              a.click();
-              
-              // Cleanup
-              setTimeout(() => {
-                document.body.removeChild(a);
-                window.URL.revokeObjectURL(url);
-              }, 100);
-            }
-            showStatus('PDF downloaded successfully!', 'success');
-          } else {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-          }
-        } catch (error) {
-          console.log('Direct download failed, trying popup method:', error);
-          
-          // Fallback: Create a user-initiated popup
-          const popupFeatures = 'width=800,height=600,scrollbars=yes,resizable=yes';
-          const popup = window.open('', '_blank', popupFeatures);
-          
-          if (popup) {
-            popup.location.href = permanentPdfUrl;
-            showStatus('PDF opened in popup (allow popups if blocked)...', 'info');
-          } else {
-            // Last resort: try direct navigation
-            window.location.href = permanentPdfUrl;
-            showStatus('Downloading PDF... (check your downloads folder)', 'info');
-          }
-        }
-      } else if (generatedPDF) {
-        // Fallback to local PDF
-        const buyerName = document.getElementById('buyerName').value.replace(/\s+/g, '_') || 'Unknown_Buyer';
-        const filename = `Purchase_Agreement_${buyerName}_${dateStr.replace(/\//g, '-')}.pdf`;
-        generatedPDF.save(filename);
-        showStatus('PDF downloaded locally!', 'success');
-      } else {
-        showStatus('No PDF available. Please submit the form first.', 'error');
+    // Download and print handlers
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+      if (generatedPDF) {
+        generatedPDF.save(`Purchase_Agreement_${document.getElementById('buyerName').value.replace(/\s+/g, '_')}.pdf`);
       }
     });
 
-    // Print PDF with Chrome-specific fixes
-    printBtn.addEventListener('click', async () => {
-      if (permanentPdfUrl) {
-        try {
-          // Chrome-specific: Use fetch with proper headers
-          const response = await fetch(permanentPdfUrl, {
-            method: 'GET',
-            credentials: 'omit',
-            cache: 'no-cache'
-          });
-          
-          if (response.ok) {
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
-            
-            // Chrome-optimized print method
-            const printWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
-            
-            if (printWindow) {
-              printWindow.document.write(`
-                <html>
-                  <head>
-                    <title>Purchase Agreement</title>
-                    <style>
-                      body { margin: 0; padding: 0; }
-                      iframe { width: 100%; height: 100vh; border: none; }
-                    </style>
-                  </head>
-                  <body>
-                    <iframe src="${url}" onload="setTimeout(() => { window.print(); }, 1000);"></iframe>
-                  </body>
-                </html>
-              `);
-              printWindow.document.close();
-              
-              // Cleanup after print
-              setTimeout(() => {
-                window.URL.revokeObjectURL(url);
-              }, 5000);
-            } else {
-              throw new Error('Popup blocked');
-            }
-          } else {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-          }
-        } catch (error) {
-          console.log('Direct print failed, trying popup method:', error);
-          
-          // Fallback: Simple popup for Chrome
-          const popupFeatures = 'width=1000,height=700,scrollbars=yes,resizable=yes,toolbar=yes';
-          const popup = window.open(permanentPdfUrl, '_blank', popupFeatures);
-          
-          if (popup) {
-            showStatus('PDF opened in new window for printing (use Ctrl+P to print)...', 'info');
-          } else {
-            showStatus('Popup blocked! Please disable popup blocker and try again.', 'error');
-          }
-        }
-      } else if (generatedPDF) {
-        // Fallback to local PDF
-        const pdfBlob = generatedPDF.output('blob');
-        const pdfUrl = URL.createObjectURL(pdfBlob);
-        const printWindow = window.open(pdfUrl);
-        if (printWindow) {
-          printWindow.onload = () => {
-            printWindow.print();
-          };
-        }
-      } else {
-        showStatus('No PDF available for printing.', 'error');
-      }
+    document.getElementById('printBtn').addEventListener('click', () => {
+      window.print();
     });
 
-    // Focus management
-    document.querySelectorAll('.field-input').forEach(input => {
-      input.addEventListener('focus', function() {
-        this.style.background = 'rgba(255, 255, 240, 0.5)';
-      });
-      
-      input.addEventListener('blur', function() {
-        this.style.background = 'transparent';
-      });
-    });
+    // Initialize
+    initCanvas();
   </script>
 </body>
 </html>
